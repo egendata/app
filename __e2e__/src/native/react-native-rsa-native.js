@@ -6,7 +6,7 @@ import {
 } from 'crypto'
 
 export const RSA = {
-  generateKeys: jest.fn((modulusLength) => {
+  generateKeys: async (modulusLength) => {
     return new Promise((resolve, reject) => {
       generateKeyPair('rsa', {
         modulusLength,
@@ -20,16 +20,16 @@ export const RSA = {
         }
       })
     })
-  }),
-  sign: jest.fn((data, privateKey) => {
+  },
+  sign: async (data, privateKey) => {
     return Promise.resolve(createSign('RSA-SHA512').update(data).sign(privateKey, 'base64'))
-  }),
-  verify: jest.fn((data, secretToVerify, key) => {
+  },
+  verify: async (data, secretToVerify, key) => {
     return Promise.resolve(createVerify('RSA-SHA512')
       .update(secretToVerify)
       .verify(key, data, 'base64'))
-  }),
-  encrypt: jest.fn((data, key) => {
+  },
+  encrypt: async (data, key) => {
     return Promise.resolve(privateEncrypt(key, Buffer.from(data)).toString('base64'))
-  }),
+  },
 }
