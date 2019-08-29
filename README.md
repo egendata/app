@@ -1,5 +1,7 @@
 # Egendata-app
 
+![Dependabot Enabled](https://flat.badgen.net/dependabot/egendata/app?icon=dependabot)
+
 An example app for managing consents and viewing data
 
 ## Prerequisites
