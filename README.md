@@ -1,5 +1,7 @@
 # Egendata-app
 
+[![Build Status](https://travis-ci.com/egendata/app.svg?branch=master)](https://travis-ci.com/egendata/app)
+
 An example app for managing consents and viewing data
 
 ## Prerequisites
