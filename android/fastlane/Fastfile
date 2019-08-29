@@ -23,8 +23,7 @@ platform :android do
 
   lane :beta do
     gradle(
-      task: 'clean assemble',
-      build_type: 'Release'
+      task: 'clean bundleRelease'
     )
     upload_to_play_store(track: 'internal')
   end
