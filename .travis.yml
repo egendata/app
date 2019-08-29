@@ -14,4 +14,5 @@ jobs:
         - npm run test
 
 stages:
-  - test
+  - name: test
+    if: branch = master AND type = pull_request
