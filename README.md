@@ -1,4 +1,9 @@
-# Egendata-app
+# Egendata app
+
+![License](https://flat.badgen.net/github/license/egendata/app)
+![Dependabot](https://flat.badgen.net/dependabot/egendata/app?icon=dependabot)
+![Travis CI](https://flat.badgen.net/travis/egendata/app?icon=travis)
+![Github release](https://flat.badgen.net/github/release/egendata/app?icon=github)
 
 [![Build Status](https://travis-ci.com/egendata/app.svg?branch=master)](https://travis-ci.com/egendata/app)
 
