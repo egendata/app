@@ -1,6 +1,9 @@
-# Egendata-app
+# Egendata app
 
-![Dependabot Enabled](https://flat.badgen.net/dependabot/egendata/app?icon=dependabot)
+![License](https://flat.badgen.net/github/license/egendata/app)
+![Dependabot](https://flat.badgen.net/dependabot/egendata/app?icon=dependabot)
+![Travis CI](https://flat.badgen.net/travis/egendata/app?icon=travis)
+![Github release](https://flat.badgen.net/github/release/egendata/app?icon=github)
 
 An example app for managing consents and viewing data
 
