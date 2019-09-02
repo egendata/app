@@ -89,7 +89,7 @@
     "jetifier": "^1.6.4",
     "lint-staged": "^9.2.1",
     "lolex": "^4.2.0",
-    "metro-react-native-babel-preset": "^0.55.0",
+    "metro-react-native-babel-preset": "^0.56.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "react-dom": "^16.9.0",
