@@ -43,7 +43,7 @@ jobs:
       # install: yarn
       script:
         - |
-          VERSION=$(node -p \"require('./package.json').version
+          VERSION=$(node -p \"require('./package.json').version)
           cd android && fastlane travistest version:$VERSION
 
 stages:
