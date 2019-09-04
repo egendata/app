@@ -60,6 +60,8 @@
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-transform-flow-strip-types": "^7.4.4",
     "@babel/runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@peculiar/webcrypto": "^1.0.12",
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/express": "^4.17.0",
@@ -73,8 +75,8 @@
     "babel-plugin-inline-import": "^3.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "eslint-config-standard": "^14.0.1",
     "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-node": "^9.1.0",
@@ -99,20 +101,5 @@
     "react-test-renderer": "^16.9.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,css}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
