@@ -37,7 +37,8 @@ jobs:
           # - extra-google-m2repository
           # - extra-google-google_play_services
       before_install:
-        - git clone "repo"
+        - git clone https://$TEMP_GITHUB_TOKEN@github.com/iteam1337/egendata-private.git
+
         - nvm install 10.16.3
         - cd android && gem install bundler
         - bundle install
