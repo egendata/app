@@ -37,11 +37,14 @@ jobs:
           # - extra-google-m2repository
           # - extra-google-google_play_services
       before_install:
-        # - nvm install 10.16.3
+        - nvm install 10.16.3
         - cd android && gem install bundler
-        - bundle install
+        - bundle install && cd ..
       # install: yarn
-      script: fastlane travistest
+      script:
+        - |
+          VERSION=$(node -p \"require('./package.json').version
+          cd android && fastlane travistest version:$VERSION
 
 stages:
   - android_fastlane
