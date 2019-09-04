@@ -41,7 +41,7 @@ jobs:
         - cd android && gem install bundler
         - bundle install
       # install: yarn
-      script: cd android && fastlane travistest
+      script: fastlane travistest
 
 stages:
   - android_fastlane
