@@ -26,7 +26,25 @@ jobs:
         - npm run lint
         - npm run test
 
+    - stage: android_fastlane
+      language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - tools
+          - platform-tools
+          - android-28
+          # - extra-google-m2repository
+          # - extra-google-google_play_services
+      before_install:
+        # - nvm install 10.16.3
+        - cd android && gem install bundler
+        - bundle install
+      # install: yarn
+      script: cd android && fastlane travistest
+
 stages:
+  - android_fastlane
   - name: test
     if: branch = master AND type = pull_request
   - name: deploy

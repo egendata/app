@@ -28,9 +28,14 @@ platform :android do
     upload_to_play_store(track: 'internal')
   end
 
+  lane :travistest do |version: version|
+    sh 'echo "hello im travis lane" '
+  end
+
   desc "Deploy a new version to the Google Play"
   lane :deploy do
     gradle(task: "clean assembleRelease")
     upload_to_play_store
   end
 end
+

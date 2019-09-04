@@ -26,6 +26,11 @@ Runs all the tests
 fastlane android beta
 ```
 
+### android travistest
+```
+fastlane android travistest
+```
+
 ### android deploy
 ```
 fastlane android deploy
