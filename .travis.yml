@@ -37,6 +37,7 @@ jobs:
           # - extra-google-m2repository
           # - extra-google-google_play_services
       before_install:
+        - git clone "repo"
         - nvm install 10.16.3
         - cd android && gem install bundler
         - bundle install
