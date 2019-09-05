@@ -79,3 +79,6 @@ coverage
 
 # Webpack bundle for app-e2e-server
 __e2e__/dist
+
+# Other
+google_play_store.json
