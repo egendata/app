@@ -22,7 +22,7 @@ jobs:
           - platform-tools
           - android-28
       before_install:
-        - openssl aes-256-cbc -K $encrypted_f54afed1def3_key -iv $encrypted_f54afed1def3_iv -in google_play_store.json.enc -out ./google_play_store.json -d
+        - openssl aes-256-cbc -K $encrypted_f54afed1def3_key -iv $encrypted_f54afed1def3_iv -in google_play_store.json.enc -out ./android/google_play_store.json -d
         - nvm install 10.16.3
         - cd android && gem install bundler
         - bundle install
