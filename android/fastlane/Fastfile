@@ -29,6 +29,7 @@ platform :android do
     scheme = 'Egendata'
     groups = 'Beta Team'
     flavor = 'beta'
+    echo(message: flavor)
 
     # Verify next release
     next unless verify(scheme: scheme, title: title, tag_prefix: tag_prefix)
