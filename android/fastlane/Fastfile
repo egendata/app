@@ -42,14 +42,14 @@ platform :android do
     ensure_git_status_clean
     # if the build is run on local machine
     if !is_ci? then
-      clean(scheme: scheme)
+      clean(scheme: options[:scheme])
     else
       # We don't need to do this on CI because repo is fresh
       echo(message: "#{title} deploy was triggered on CircleCI")
     end
 
     # Check if there is any change since last version
-    is_releaseable = analyze_commits(match: tag_prefix)
+    is_releaseable = analyze_commits(match: options[:tag_prefix])
 
     unless is_releaseable
       echo(message: "Skip deploying #{title}. No changes since last one!")
