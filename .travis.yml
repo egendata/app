@@ -46,8 +46,8 @@ jobs:
       script:
         - |
           VERSION=$(node -p "require('../package.json').version")
-          fastlane travistest version:$VERSION
           echo $GOOGLE_PLAY | base64 --decode > ./google_play_store.json
+          fastlane travistest version:$VERSION
 
 stages:
   - android_fastlane
