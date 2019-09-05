@@ -44,8 +44,7 @@ default_platform(:android)
     build_number=android_get_version_code
 
     gradle(
-      task: "bundleRelease",
-      flavor: flavor,
+      task: "clean bundleRelease"
     )
 
     notes = conventional_changelog(title: title, format: 'markdown')
