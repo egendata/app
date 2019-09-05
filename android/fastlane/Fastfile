@@ -28,7 +28,7 @@ platform :android do
     upload_to_play_store(track: 'internal')
   end
 
-  lane :travistest do |version: version|
+  lane :ci_internal do |version: version|
     upload_to_play_store(track: 'internal')
   end
 

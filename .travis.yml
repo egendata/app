@@ -1,6 +1,6 @@
 jobs:
   include:
-    - stage: test
+    - stage: test_and_lint
       language: node_js
       node_js:
         - "10"
@@ -13,20 +13,7 @@ jobs:
         - npm run lint
         - npm run test
 
-    - stage: deploy
-      language: node_js
-      node_js:
-        - "10"
-      cache:
-        directories:
-          - "$HOME/.npm"
-      install:
-        - npm ci
-      script:
-        - npm run lint
-        - npm run test
-
-    - stage: android_fastlane
+    - stage: fastlane_android
       language: android
       jdk: oraclejdk8
       android:
@@ -34,24 +21,20 @@ jobs:
           - tools
           - platform-tools
           - android-28
-          # - extra-google-m2repository
-          # - extra-google-google_play_services
       before_install:
         - git clone https://$TEMP_GITHUB_TOKEN@github.com/iteam1337/egendata-private.git
-
         - nvm install 10.16.3
         - cd android && gem install bundler
         - bundle install
-      # install: yarn
       script:
         - |
           VERSION=$(node -p "require('../package.json').version")
           echo $GOOGLE_PLAY | base64 --decode > ./google_play_store.json
-          fastlane travistest version:$VERSION
+          fastlane ci_internal version:$VERSION
+          rm ./google_play_store.json
 
 stages:
-  - android_fastlane
-  - name: test
-    if: branch = master AND type = pull_request
-  - name: deploy
+  - name: fastlane_android
     if: branch = master AND type != pull_request
+  - name: test_and_lint
+    if: branch = master AND type = pull_request
