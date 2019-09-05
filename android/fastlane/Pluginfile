@@ -2,5 +2,5 @@
 #
 # Ensure this file is checked in to source control!
 
-gem 'fastlane-plugin-semantic_release'
 gem 'fastlane-plugin-versioning_android'
+gem 'fastlane-plugin-semantic_release', :git => 'https://github.com/egendata/fastlane-plugin-semantic_release' 
