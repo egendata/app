@@ -18,10 +18,10 @@ default_platform(:android)
   platform :android do
     desc "Runs all the tests"
     lane :test do
-    gradle(
-      task: "clean bundleRelease"
-    )
-  end
+      gradle(
+        task: "clean bundleRelease"
+      )
+    end
 
   lane :ci_internal do
     tag_prefix = 'android/alpha*'
@@ -44,6 +44,13 @@ default_platform(:android)
 
     build_number=android_get_version_code
 
+    gradle(
+      task: "clean bundleRelease"
+    )
+    upload_to_play_store(
+      track: 'internal'
+    )
+
     notes = conventional_changelog(title: title, format: 'markdown')
 
     # Create tag to recognize future "last version" (the current version)
@@ -51,19 +58,13 @@ default_platform(:android)
 
     set_github_release(
       repository_name: "egendata/app",
-      api_token: "63a744a58756876c8b3196eec58e57043cda68a3",
+      api_token: ENV["GITHUB_TOKEN"],
       name: next_version,
       tag_name: next_version,
-      description: notes,
+      description: (notes.sub! '#', '# '),
       commitish: "master",
     )
     
-  end
-
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
   end
 end
 

@@ -161,7 +161,7 @@ PLATFORMS
 
 DEPENDENCIES
   fastlane
-  fastlane-plugin-semantic_release!
+  fastlane-plugin-semantic_release (= 1.0.0)!
   fastlane-plugin-versioning_android
 
 BUNDLED WITH
