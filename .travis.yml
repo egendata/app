@@ -22,7 +22,6 @@ jobs:
           - platform-tools
           - android-28
       before_install:
-        - git clone https://$TEMP_GITHUB_TOKEN@github.com/iteam1337/egendata-private.git
         - nvm install 10.16.3
         - cd android && gem install bundler
         - bundle install
