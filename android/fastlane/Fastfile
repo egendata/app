@@ -23,13 +23,8 @@ platform :android do
   end
 
   desc "Build a new alpha version"
-  lane :beta do |options|
-    tag_prefix = 'android/beta*'
-    title = 'Android Beta'
-    scheme = 'Egendata'
-    groups = 'Beta Team'
-    flavor = 'beta'
-    echo(message: flavor)
+  lane :alpha do |options|
+    
 
     # Verify next release
     next unless verify(scheme: scheme, title: title, tag_prefix: tag_prefix)
@@ -37,24 +32,53 @@ platform :android do
 
   end
 
-  desc "Verify next release"
-  lane :verify do |options|
-    # Git status has to be clean
-    ensure_git_status_clean
-    # if the build is run on local machine
 
-    # Check if there is any change since last version
-    is_releaseable = analyze_commits(match: options[:tag_prefix])
-
-    unless is_releaseable
-      echo(message: "Skip deploying #{options[:title]}. No changes since last one!")
-    end
-
+  desc "Build an android release"
+  lane :build do |options|
+    gradle(
+      task: "bundleRelease",
+      flavor: options[:flavor],
+      properties: {
+          'vcode' => build_number,
+          'vname' => options[:next_version]
+      }
+    )
   end
 
-  lane :ci_internal do |version: version|
-  
-    upload_to_play_store(track: 'internal')
+  lane :ci_internal do
+    tag_prefix = 'android/alpha*'
+    title = 'Android Alpha'
+    scheme = 'Egendata'
+    groups = 'Alpha Team'
+    flavor = 'alpha'
+
+    # Check if there is any change since last version
+    is_releaseable = analyze_commits(match: tag_prefix)
+
+    unless is_releaseable
+      echo(message: "Skip deploying #{title}. No changes since last one!")
+    end
+
+    next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    echo(message: next_version)
+
+    gradle(
+      task: "bundleRelease",
+      flavor: flavor,
+      properties: {
+          'vcode' => build_number,
+          'vname' => next_version
+      }
+    )
+    
+
+    notes = conventional_changelog(title: title, format: 'markdown')
+    echo(message: notes)
+
+    # Create tag to recognize future "last version" (the current version)
+    add_git_tag(tag: "android/#{flavor}/#{next_version}/#{build_number}")
+
+    push_git_tags
   end
 
   desc "Deploy a new version to the Google Play"
