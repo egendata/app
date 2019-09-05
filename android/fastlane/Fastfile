@@ -46,7 +46,7 @@ platform :android do
     is_releaseable = analyze_commits(match: options[:tag_prefix])
 
     unless is_releaseable
-      echo(message: "Skip deploying #{title}. No changes since last one!")
+      echo(message: "Skip deploying #{options[:title]}. No changes since last one!")
     end
 
   end
