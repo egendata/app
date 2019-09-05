@@ -15,20 +15,50 @@
 
 default_platform(:android)
 
+
 platform :android do
   desc "Runs all the tests"
   lane :test do
     gradle(task: "test")
   end
 
-  lane :beta do
-    gradle(
-      task: 'clean bundleRelease'
-    )
-    upload_to_play_store(track: 'internal')
+  desc "Build a new alpha version"
+  lane :beta do |options|
+    tag_prefix = 'android/beta*'
+    title = 'Android Beta'
+    scheme = 'Egendata'
+    groups = 'Beta Team'
+    flavor = 'beta'
+
+    # Verify next release
+    next unless verify(scheme: scheme, title: title, tag_prefix: tag_prefix)
+    # Build ios app
+
+  end
+
+  desc "Verify next release"
+  lane :verify do |options|
+    # Git status has to be clean
+    ensure_git_status_clean
+    # if the build is run on local machine
+    if !is_ci? then
+      clean(scheme: scheme)
+    else
+      # We don't need to do this on CI because repo is fresh
+      echo(message: "#{title} deploy was triggered on CircleCI")
+    end
+
+    # Check if there is any change since last version
+    is_releaseable = analyze_commits(match: tag_prefix)
+
+    unless is_releaseable
+      echo(message: "Skip deploying #{title}. No changes since last one!")
+    end
+
   end
 
   lane :ci_internal do |version: version|
+  
     upload_to_play_store(track: 'internal')
   end
 

@@ -25,10 +25,15 @@ Runs all the tests
 ```
 fastlane android beta
 ```
-
-### android travistest
+Build a new alpha version
+### android verify
 ```
-fastlane android travistest
+fastlane android verify
+```
+Verify next release
+### android ci_internal
+```
+fastlane android ci_internal
 ```
 
 ### android deploy
