@@ -1,2 +1,2 @@
-json_key_file("../google_play_store.json")
+json_key_file("./google_play_store.json")
 package_name("com.egendata")
