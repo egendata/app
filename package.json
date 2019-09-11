@@ -26,7 +26,6 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@egendata/jwt-lite": "1.2.0",
     "@egendata/messaging": "0.4.2",
     "@egendata/react-native-simple-crypto": "1.0.1",
     "@react-native-community/async-storage": "1.6.1",
