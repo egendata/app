@@ -20,7 +20,7 @@ jobs:
         components:
           - tools
           - platform-tools
-          - android-28
+          - android-28.0.3
       before_install:
         - openssl aes-256-cbc -K $encrypted_f54afed1def3_key -iv $encrypted_f54afed1def3_iv -in ./android/google_play_store.json.enc -out ./android/google_play_store.json -d
         - nvm install 10.16.3
