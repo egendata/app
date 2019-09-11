@@ -26,6 +26,7 @@ jobs:
         - yes | sdkmanager "platforms;android-28"
         - nvm install 10.16.3
         - npm ci
+        - npm run preandroid
         - cd android && gem install bundler
         - bundle install
       script:
