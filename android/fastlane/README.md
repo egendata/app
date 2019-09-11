@@ -26,11 +26,6 @@ Runs all the tests
 fastlane android ci_internal
 ```
 
-### android deploy
-```
-fastlane android deploy
-```
-Deploy a new version to the Google Play
 
 ----
 

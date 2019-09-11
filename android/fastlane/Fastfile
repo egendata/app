@@ -61,7 +61,7 @@ default_platform(:android)
       api_token: ENV["GITHUB_TOKEN"],
       name: next_version,
       tag_name: next_version,
-      description: (notes.sub! '#', '# '),
+      description: notes,
       commitish: "master",
     )
     
