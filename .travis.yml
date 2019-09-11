@@ -29,7 +29,6 @@ jobs:
       script:
         - |
           VERSION=$(node -p "require('../package.json').version")
-          echo $GOOGLE_PLAY | base64 --decode > ./google_play_store.json
           fastlane ci_internal
           rm ./google_play_store.json
 
