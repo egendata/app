@@ -35,7 +35,6 @@ jobs:
       script:
         - |
           fastlane ci_internal
-          rm ./android/google_play_store.json ./android/app/release.keystore ./android/gradle.properties
 
 stages:
   - name: fastlane_android
