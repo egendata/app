@@ -24,7 +24,7 @@ default_platform(:android)
     end
 
   lane :ci_internal do
-    tag_prefix = '*android_alpha'
+    tag_prefix = '*android_alpha*'
     title = 'Android Alpha'
     scheme = 'Egendata'
     groups = 'Alpha Team'
@@ -33,9 +33,12 @@ default_platform(:android)
     # Check if there is any change since last version
     is_releaseable = analyze_commits(match: tag_prefix)
 
+
     unless is_releaseable
       echo(message: "Skip deploying #{title}. No changes since last one!")
     end
+
+    echo(message: "is releasable")
 
     next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
 
