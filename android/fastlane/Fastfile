@@ -24,7 +24,7 @@ default_platform(:android)
     end
 
   lane :ci_internal do
-    tag_prefix = '*android_alpha'
+    tag_prefix = '*'
     title = 'Android Alpha'
     scheme = 'Egendata'
     groups = 'Alpha Team'
