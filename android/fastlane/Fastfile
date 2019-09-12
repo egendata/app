@@ -24,13 +24,12 @@ default_platform(:android)
     end
 
   lane :ci_internal do
-    tag_prefix = '*'
+    tag_prefix = 'v*-android_alpha*'
     title = 'Android Alpha'
     scheme = 'Egendata'
     groups = 'Alpha Team'
     flavor = 'alpha'
     
-
     # Check if there is any change since last version
     is_releaseable = analyze_commits(match: tag_prefix)
 
