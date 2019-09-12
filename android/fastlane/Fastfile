@@ -17,11 +17,16 @@ default_platform(:android)
 
   platform :android do
     desc "Runs all the tests"
-    lane :test do
+    lane :alpha do
       gradle(
         task: "clean bundleRelease"
       )
+      upload_to_play_store(
+        track: 'internal'
+      )
     end
+
+
 
   lane :ci_internal do
     tag_prefix = 'android/alpha*'
