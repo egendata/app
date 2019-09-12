@@ -28,7 +28,7 @@ default_platform(:android)
 
 
 
-  lane :ci_internal do
+  lane :android_alpha do
     tag_prefix = 'android/alpha*'
     title = 'Android Alpha'
     scheme = 'Egendata'

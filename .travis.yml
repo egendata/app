@@ -34,7 +34,7 @@ jobs:
         - bundle install
       script:
         - |
-          fastlane ci_internal
+          fastlane android_alpha
 
 stages:
   - name: fastlane_android
