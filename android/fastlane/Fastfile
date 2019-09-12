@@ -24,11 +24,12 @@ default_platform(:android)
     end
 
   lane :ci_internal do
-    tag_prefix = 'android/alpha*'
+    tag_prefix = '*android_alpha'
     title = 'Android Alpha'
     scheme = 'Egendata'
     groups = 'Alpha Team'
     flavor = 'alpha'
+    
 
     # Check if there is any change since last version
     is_releaseable = analyze_commits(match: tag_prefix)
@@ -54,13 +55,13 @@ default_platform(:android)
     notes = conventional_changelog(title: title, format: 'markdown')
 
     # Create tag to recognize future "last version" (the current version)
-    add_git_tag(tag: "android/#{flavor}/#{next_version}/#{build_number}")
+    add_git_tag(tag: "v#{next_version}-android_#{flavor}.#{build_number}")
 
     set_github_release(
       repository_name: "egendata/app",
       api_token: ENV["GITHUB_TOKEN"],
       name: next_version,
-      tag_name: next_version,
+      tag_name: "v#{next_version}",
       description: notes,
       commitish: "master",
     )

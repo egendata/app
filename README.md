@@ -44,7 +44,7 @@ npm run link
 
 ## Run
 
-### Android
+### __Android__
 
 - Start the device that will run the app from Android Studio. Virtual devices are under Tools->AVD Manager (if you do not see `AVD Manager`, go to `Help` and use `Find action`)
 - Run
@@ -53,7 +53,7 @@ npm run link
   npm run android
   ```
 
-### iOS
+### __iOS__
 
 - Update Cocoapods if version < 1.7.5 (check with `pod --version`)
 
