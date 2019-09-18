@@ -1,2 +1,2 @@
-json_key_file("/path/to/egendata_google_play.json")
+json_key_file("/home/travis/build/egendata/app/android/google_play_store.json")
 package_name("com.egendata")

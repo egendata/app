@@ -14,7 +14,7 @@
     "prettier": "eslint '**/*.js' --fix",
     "e2e:build": "cd __e2e__/ && webpack",
     "e2e:start": "node __e2e__/dist/index.js",
-    "e2e:watch": "npm run e2e:build && nodemon __e2e__/dist/ --watch __e2e__/dist/"
+    "e2e:watch": "npm run e2e:build && nodemon __e2e__/dist/ --watch __e2e__/dist/",
   },
   "contributors": [
     "Adam Näslund <adam.naslund@iteam.se>",

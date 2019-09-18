@@ -44,7 +44,7 @@ npm run link
 
 ## Run
 
-### Android
+### __Android__
 
 - Start the device that will run the app from Android Studio. Virtual devices are under Tools->AVD Manager (if you do not see `AVD Manager`, go to `Help` and use `Find action`)
 - Run
@@ -53,7 +53,7 @@ npm run link
   npm run android
   ```
 
-### iOS
+### __iOS__
 
 - Update Cocoapods if version < 1.7.5 (check with `pod --version`)
 
@@ -124,7 +124,7 @@ brew cask install fastlane
 - Download and open the matching certificates and provisioning-profiles from the [Apple Developer Potal](developer.apple.com). For `Signing (Debug)` use "Egendata iOS", for  `Signing (Release)` use "Egendata iOS Distribution Profile".
 
 
-4. Release
+4. Manual release
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
@@ -137,15 +137,15 @@ fastlane beta
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
-1. Download the Google Play JSON-file (it's in LastPass)
+1. Download the Google Play, the release.keystore and the gradle.properties (it's in LastPass)
   - Place the `.json`-file somewhere, you'll need to point to it from `android/fastlane/Appfile`
     `json_key_file("/path/to/egendata_google_play.json")`
   - Place the `release.keystore` in `android/app`
-  - Place `gradle.properties` in `android`
+  - Create `gradle.properties` in `android` and paste from lastpass.
 
 2.
 ```
 cd android
-fastlane beta
+fastlane alpha
 ```
 
