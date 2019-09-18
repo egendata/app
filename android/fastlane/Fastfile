@@ -62,9 +62,7 @@ default_platform(:android)
     tag_name = "android/#{flavor}/#{next_version}/#{build_number}"
     notes = conventional_changelog(title: title, format: 'markdown')
 
-    # Create tag to recognize future "last version" (the current version)
-    add_git_tag(tag: tag_name)
-    push_git_tags
+    
 
     set_github_release(
       repository_name: "egendata/app",
