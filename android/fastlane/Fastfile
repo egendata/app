@@ -48,8 +48,8 @@ default_platform(:android)
       build_number=android_get_version_code
       # git_add(path: 'app/build.gradle')
       # git_commit(path: 'app/build.gradle', message: 'chore: version bump android', skip_git_hooks: true)
-      sh("echo", ENV['GITHUB_TOKEN'])
-      sh("git", "remote", " -v")
+      # sh("git", "remote", "add", "origin", "https://"ENV["GITHUB_TOKEN}@github.com/egendata/app.git > /dev/null 2>&1)
+      sh("git", "remote", "-v")
       # sh("git", "push", "origin", "master")
 
       # gradle(
