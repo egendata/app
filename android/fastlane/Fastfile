@@ -66,7 +66,7 @@ default_platform(:android)
       api_token: ENV["GITHUB_TOKEN"],
       message: "chore: bump android build number",
       branch: "master",
-      path: "./app/build.gradle"
+      path: "app/build.gradle"
     )
 
     tag_name = "android/#{flavor}/#{next_version}/#{build_number}"
