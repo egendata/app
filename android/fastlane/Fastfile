@@ -40,7 +40,6 @@ default_platform(:android)
 
 
     if is_releaseable then
-      setup_travis
       next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
 
       android_set_version_code
@@ -49,7 +48,7 @@ default_platform(:android)
       build_number=android_get_version_code
       git_add(path: 'app/build.gradle')
       git_commit(path: 'app/build.gradle', message: 'chore: version bump android', skip_git_hooks: true)
-      push_to_git_remote
+      sh("git", "push", "origin", "master")
 
       # gradle(
       #   task: "clean bundleRelease"
