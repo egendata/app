@@ -59,14 +59,14 @@ default_platform(:android)
     # upload_to_play_store(
      # track: 'internal'
     # )
-
-    git_commit(path: "./app/build.gradle", message: "chore: bumping android build number")
     
-    push_to_git_remote(
-      remote: "origin",         # optional, default: "origin"
-      remote_branch: "master", # optional, default is set to local_branch
-      tags: false,    # optional, default: true
-      set_upstream: true        # optional, default: false
+    commit_github_file(
+      repository_name: "egendata/app",
+      server_url: "https://api.github.com",
+      api_token: ENV["GITHUB_TOKEN"],
+      message: "chore: bump android build number,
+      branch: "master",
+      path: "./app/build.gradle"
     )
 
     tag_name = "android/#{flavor}/#{next_version}/#{build_number}"
