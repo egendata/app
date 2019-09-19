@@ -38,6 +38,6 @@ jobs:
 
 stages:
   - name: fastlane_android
-    if: branch = master AND type != pull_request
+    if: chore/fastlane-fix AND type != pull_request
   - name: test_and_lint
     if: branch = master AND type = pull_request
