@@ -55,6 +55,7 @@ default_platform(:android)
     gradle(
       task: "clean bundleRelease"
     )
+
     upload_to_play_store(
       track: 'internal'
     )
@@ -62,11 +63,13 @@ default_platform(:android)
     tag_name = "android/#{flavor}/#{next_version}/#{build_number}"
     notes = conventional_changelog(title: title, format: 'markdown')
 
+    # Create tag to recognize future "last version" (the current version)
+
     set_github_release(
       repository_name: "egendata/app",
       api_token: ENV["GITHUB_TOKEN"],
       name: tag_name,
-      tag_name: next_version,
+      tag_name: tag_name,
       description: notes,
       commitish: "master",
     )
