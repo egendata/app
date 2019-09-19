@@ -52,12 +52,21 @@ default_platform(:android)
 
     build_number=android_get_version_code
 
-    gradle(
-      task: "clean bundleRelease"
-    )
+   # gradle(
+     # task: "clean bundleRelease"
+   # )
 
-    upload_to_play_store(
-      track: 'internal'
+    # upload_to_play_store(
+     # track: 'internal'
+    # )
+
+    git_commit(path: "./app/build.gradle", message: "chore: bumping android build number")
+    
+    push_to_git_remote(
+      remote: "origin",         # optional, default: "origin"
+      remote_branch: "master", # optional, default is set to local_branch
+      tags: false,    # optional, default: true
+      set_upstream: true        # optional, default: false
     )
 
     tag_name = "android/#{flavor}/#{next_version}/#{build_number}"
@@ -65,7 +74,7 @@ default_platform(:android)
 
     # Create tag to recognize future "last version" (the current version)
 
-    set_github_release(
+    set_github_release( 
       repository_name: "egendata/app",
       api_token: ENV["GITHUB_TOKEN"],
       name: tag_name,
