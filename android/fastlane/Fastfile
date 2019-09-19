@@ -47,9 +47,11 @@ default_platform(:android)
 
       build_number=android_get_version_code
 
-      git_branch
       sh("git", "remote", "set-url", "origin", "https://" + ENV["GITHUB_USER"] + ":" + ENV["GITHUB_TOKEN"] + "@github.com/" + ENV["TRAVIS_REPO_SLUG"] + ".git")
       sh("git", "checkout", "master")
+      sh("git", "config", "user.name", ENV["GITHUB_USER"])
+      sh("git", "config", "user.email", ENV["GITHUB_EMAIL"])
+
       git_add(path: 'app/build.gradle')
       git_commit(path: 'app/build.gradle', message: 'chore: version bump android', skip_git_hooks: true)
       push_to_git_remote(
