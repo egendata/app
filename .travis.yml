@@ -30,8 +30,9 @@ jobs:
         - nvm install 10.16.3
         - npm ci
         - npm run preandroid
-        - cd android && gem install bundler && cd ..
+        - cd android && gem install bundler
         - bundle install
+        - cd ..
       script:
         - |
           echo "OPERATOR_URL=${OPERATOR_URL}" > .env
