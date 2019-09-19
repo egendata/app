@@ -16,14 +16,14 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## Android
-### android test
+### android alpha
 ```
-fastlane android test
+fastlane android alpha
 ```
 Runs all the tests
-### android ci_internal
+### android android_alpha
 ```
-fastlane android ci_internal
+fastlane android android_alpha
 ```
 
 
