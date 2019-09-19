@@ -64,7 +64,7 @@ default_platform(:android)
       repository_name: "egendata/app",
       server_url: "https://api.github.com",
       api_token: ENV["GITHUB_TOKEN"],
-      message: "chore: bump android build number,
+      message: "chore: bump android build number",
       branch: "master",
       path: "./app/build.gradle"
     )
