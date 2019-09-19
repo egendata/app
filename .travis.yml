@@ -34,9 +34,7 @@ jobs:
         - bundle install
         - cd ..
       script:
-        - |
-          echo "OPERATOR_URL=${OPERATOR_URL}" > .env
-          fastlane android_alpha
+        - fastlane android_alpha
 
 stages:
   - name: fastlane_android
