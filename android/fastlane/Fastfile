@@ -49,7 +49,9 @@ default_platform(:android)
       git_add(path: 'app/build.gradle')
       git_commit(path: 'app/build.gradle', message: 'chore: version bump android', skip_git_hooks: true)
       sh("git", "remote", "set-url", "origin", "https://" + ENV["GITHUB_USER"] + ":" + ENV["GITHUB_TOKEN"] + "@github.com/" + ENV["TRAVIS_REPO_SLUG"] + ".git")
-      push_to_git_remote
+      push_to_git_remote(
+        tags: false,    # optional, default: true
+      )
       # gradle(
       #   task: "clean bundleRelease"
       # )
