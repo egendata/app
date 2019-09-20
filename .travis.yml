@@ -31,10 +31,15 @@ jobs:
         - npm ci
         - npm run preandroid
         - cd android && gem install bundler
-        - bundle install
+        - bundle install && cd ..
       script:
         - |
-          fastlane android_alpha
+          echo "
+          OPERATOR_URL=${OPERATOR_URL}
+          DROPBOX_KEY=${PDS_KEY}
+          " > .env
+
+          cd android && fastlane android_alpha
 
 stages:
   - name: fastlane_android
