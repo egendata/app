@@ -91,6 +91,8 @@ React debug menu available on ios with ⌘d and on android with ⌘m / ctrl+m
 
 ## Releasing Betas
 
+### Manual releases
+
 *Install fastlane*
 
 ```
