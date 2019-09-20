@@ -114,20 +114,29 @@ brew cask install fastlane
 
 `xcode-select --install`
 
-3. Certificates
+2. Download and open the provisioning-profile from the [Apple Developer Potal](developer.apple.com). For `Signing (Debug)` use "Egendata iOS", for  `Signing (Release)` use "Egendata iOS Distribution Profile".
 
-- Add a file name "Appfile" within `ios/fastlane`. For contents, see LastPass.
-- Download and open the matching certificates and provisioning-profiles from the [Apple Developer Potal](developer.apple.com). For `Signing (Debug)` use "Egendata iOS", for  `Signing (Release)` use "Egendata iOS Distribution Profile".
+3. Certificates and signing
+- Add a app signing certificate associated with your companys provisioning profile. It's located in lastpass `IteamIOSDistributionCertificate.p12`
 
+   - Double click and enter password (found in lastpass `Egendata iOS Certificate Password`)
 
-4. Manual release
+   - Open the project in Xcode, find the "Egendata" iOS target and its general settings. In the `signing` section, check the `Automatically manage signing` box.
+
+   - Open Xcode accounts preferences (Xcode -> preferences -> accounts). *If you don't see your apple id here, sign in from the + sign in the bottom left corner with the apple id associated with your team on apples dev console.*
+
+   - Target your apple id, select your team and then -> `manage certificates`. If you have installed the cert correctly from the above steps, you should see `iOS Distribution` under the `iOS Distribution Certificates` section without any complaints of keys missing. If so, you're good.
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
+
 
 ```
 cd ios
 fastlane beta
 ```
+*NOTE: Fastlane command might error with `error: Multiple commands produce ...`, if so, run again.*
+*NOTE: Fastlane command might error with ` error: The sandbox is not in sync with the Podfile.lock`, if so, see the `If build fails` section .*
+
 
 ### Android (Google Play)
 
