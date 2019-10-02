@@ -9,7 +9,20 @@ exports[`elements/Button should render 1`] = `
     }
   }
 >
-  <ForwardRef>
+  <ForwardRef
+    style={
+      Object {
+        "elevation": 6,
+        "shadowColor": "grey",
+        "shadowOffset": Object {
+          "height": 6,
+          "width": 0,
+        },
+        "shadowOpacity": 0.2,
+        "shadowRadius": 6,
+      }
+    }
+  >
     <ForwardRef>
       PrimaryButton
     </ForwardRef>
