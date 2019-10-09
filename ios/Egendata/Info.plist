@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>work.mydata.ConsentApp</string>
+			<string>work.egendata.ConsentApp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mydata</string>
+				<string>egendata</string>
 			</array>
 		</dict>
 	</array>
