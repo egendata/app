@@ -65,7 +65,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
         }
         style={
           Object {
-            "backgroundColor": "#F9F9FB",
+            "backgroundColor": "#FAFAFA",
             "paddingTop": 24,
           }
         }

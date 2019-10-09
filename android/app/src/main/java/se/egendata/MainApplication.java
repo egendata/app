@@ -8,7 +8,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.horcrux.svg.SvgPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -33,7 +32,6 @@ public class MainApplication extends Application implements ReactApplication {
         new RCTCryptoPackage(),
         new AsyncStoragePackage(),
         new SvgPackage(),
-        new RNDeviceInfo(),
         new RNGestureHandlerPackage(),
         new RNCameraPackage(),
         new ReactNativeConfigPackage()

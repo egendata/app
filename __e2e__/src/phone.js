@@ -6,11 +6,9 @@ import * as storageService from '../../lib/services/storage'
 import Config from 'react-native-config'
 import AsyncStorage from '@react-native-community/async-storage'
 
-export async function createAccount({ firstName, lastName }) {
+export async function createAccount() {
   const pds = { provider: 'memory', access_token: 'nope' }
   const acc = {
-    firstName,
-    lastName,
     pds,
   }
   const account = await accountService.save(acc)
