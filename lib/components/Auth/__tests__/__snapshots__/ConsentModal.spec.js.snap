@@ -15,14 +15,11 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
       Array [
         Object {
           "alignItems": "center",
-          "backgroundColor": "#F9F9FB",
+          "backgroundColor": "#FAFAFA",
           "height": "100%",
           "justifyContent": "center",
-          "overflow": "hidden",
-          "paddingBottom": 0,
-          "paddingLeft": 32,
-          "paddingRight": 32,
-          "paddingTop": 0,
+          "paddingLeft": 24,
+          "paddingRight": 24,
         },
       ]
     }
@@ -88,11 +85,11 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
             "width": "100%",
           }
         }
-        style={
-          Object {
-            "backgroundColor": "#FAFAFA",
-            "paddingTop": 24,
-          }
+        supportedOrientations={
+          Array [
+            "portrait",
+            "landscape",
+          ]
         }
         swipeThreshold={100}
       >
@@ -172,7 +169,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   Array [
                     Object {
                       "alignSelf": "stretch",
-                      "color": "#241C7D",
+                      "color": "#04ABFF",
                       "fontFamily": "Rubik-Medium",
                       "fontSize": 18,
                       "marginBottom": 12,
@@ -192,7 +189,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   Array [
                     Object {
                       "alignSelf": "stretch",
-                      "color": "#241C7D",
+                      "color": "#454F54",
                       "fontFamily": "Karla-Regular",
                       "fontSize": 18,
                       "lineHeight": 22,
@@ -234,7 +231,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
             }
             style={
               Object {
-                "backgroundColor": "#F9F9FB",
+                "backgroundColor": "#FAFAFA",
                 "paddingTop": 24,
               }
             }
@@ -272,7 +269,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -283,33 +280,83 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   >
                     Personal information.
                   </Text>
-                  <View>
-                    <RNSVGSvgView
-                      bbHeight="16"
-                      bbWidth="16"
-                      fill="none"
-                      height="16"
-                      style={
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight="14"
+                    bbWidth="14"
+                    height="14"
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderWidth": 0,
+                        },
+                        undefined,
+                        null,
+                        Object {
+                          "flex": 0,
+                          "height": 14,
+                          "width": 14,
+                        },
+                      ]
+                    }
+                    vbHeight={14}
+                    vbWidth={14}
+                    width="14"
+                  >
+                    <RNSVGGroup
+                      fill={
                         Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "borderWidth": 0,
-                          },
-                          undefined,
-                          null,
-                          Object {
-                            "flex": 0,
-                            "height": 16,
-                            "width": 16,
-                          },
+                          0,
+                          4278190080,
                         ]
                       }
-                      width="16"
+                      fillOpacity={1}
+                      fillRule={1}
+                      font={Object {}}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
                     >
                       <RNSVGGroup
-                        fill={null}
+                        fill={
+                          Array [
+                            0,
+                            4278190080,
+                          ]
+                        }
                         fillOpacity={1}
-                        fillRule={1}
+                        fillRule={0}
                         font={Object {}}
                         matrix={
                           Array [
@@ -327,6 +374,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         propList={
                           Array [
                             "fill",
+                            "fillRule",
                           ]
                         }
                         rotation={0}
@@ -346,12 +394,13 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         x={0}
                         y={0}
                       >
-                        <RNSVGPath
-                          d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14.546A6.553 6.553 0 0 1 1.455 8 6.553 6.553 0 0 1 8 1.455 6.553 6.553 0 0 1 14.546 8 6.553 6.553 0 0 1 8 14.546z"
+                        <RNSVGCircle
+                          cx="7"
+                          cy="7"
                           fill={
                             Array [
                               0,
-                              4287664035,
+                              4278496255,
                             ]
                           }
                           fillOpacity={1}
@@ -374,6 +423,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                               "fill",
                             ]
                           }
+                          r="7"
                           rotation={0}
                           scaleX={1}
                           scaleY={1}
@@ -392,11 +442,11 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           y={0}
                         />
                         <RNSVGPath
-                          d="M8 3.394a.97.97 0 0 0 0 1.94.97.97 0 0 0 0-1.94zM8 6.788a.727.727 0 0 0-.727.727v4.364a.727.727 0 0 0 1.454 0V7.515A.727.727 0 0 0 8 6.788z"
+                          d="M6.94 4.316C7.372 4.316 7.72 3.968 7.72 3.536C7.72 3.104 7.372 2.756 6.94 2.756C6.52 2.756 6.16 3.104 6.16 3.536C6.16 3.968 6.52 4.316 6.94 4.316ZM6.316 11H7.576V5.204H6.316V11Z"
                           fill={
                             Array [
                               0,
-                              4287664035,
+                              4294967295,
                             ]
                           }
                           fillOpacity={1}
@@ -437,8 +487,8 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           y={0}
                         />
                       </RNSVGGroup>
-                    </RNSVGSvgView>
-                  </View>
+                    </RNSVGGroup>
+                  </RNSVGSvgView>
                 </View>
               </TouchableOpacity>
               <View
@@ -458,7 +508,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#04ABFF",
                           "fontFamily": "Rubik-Medium",
                           "fontSize": 14,
                           "marginBottom": 6,
@@ -479,7 +529,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -495,7 +545,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#04ABFF",
                           "fontFamily": "Rubik-Medium",
                           "fontSize": 14,
                           "marginBottom": 6,
@@ -516,7 +566,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -583,7 +633,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -594,33 +644,83 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   >
                     A list of your work experiences.
                   </Text>
-                  <View>
-                    <RNSVGSvgView
-                      bbHeight="16"
-                      bbWidth="16"
-                      fill="none"
-                      height="16"
-                      style={
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight="14"
+                    bbWidth="14"
+                    height="14"
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    style={
+                      Array [
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderWidth": 0,
+                        },
+                        undefined,
+                        null,
+                        Object {
+                          "flex": 0,
+                          "height": 14,
+                          "width": 14,
+                        },
+                      ]
+                    }
+                    vbHeight={14}
+                    vbWidth={14}
+                    width="14"
+                  >
+                    <RNSVGGroup
+                      fill={
                         Array [
-                          Object {
-                            "backgroundColor": "transparent",
-                            "borderWidth": 0,
-                          },
-                          undefined,
-                          null,
-                          Object {
-                            "flex": 0,
-                            "height": 16,
-                            "width": 16,
-                          },
+                          0,
+                          4278190080,
                         ]
                       }
-                      width="16"
+                      fillOpacity={1}
+                      fillRule={1}
+                      font={Object {}}
+                      matrix={
+                        Array [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0,
+                          0,
+                        ]
+                      }
+                      opacity={1}
+                      originX={0}
+                      originY={0}
+                      propList={Array []}
+                      rotation={0}
+                      scaleX={1}
+                      scaleY={1}
+                      skewX={0}
+                      skewY={0}
+                      stroke={null}
+                      strokeDasharray={null}
+                      strokeDashoffset={null}
+                      strokeLinecap={0}
+                      strokeLinejoin={0}
+                      strokeMiterlimit={4}
+                      strokeOpacity={1}
+                      strokeWidth={1}
+                      vectorEffect={0}
+                      x={0}
+                      y={0}
                     >
                       <RNSVGGroup
-                        fill={null}
+                        fill={
+                          Array [
+                            0,
+                            4278190080,
+                          ]
+                        }
                         fillOpacity={1}
-                        fillRule={1}
+                        fillRule={0}
                         font={Object {}}
                         matrix={
                           Array [
@@ -638,6 +738,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         propList={
                           Array [
                             "fill",
+                            "fillRule",
                           ]
                         }
                         rotation={0}
@@ -657,12 +758,13 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         x={0}
                         y={0}
                       >
-                        <RNSVGPath
-                          d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 14.546A6.553 6.553 0 0 1 1.455 8 6.553 6.553 0 0 1 8 1.455 6.553 6.553 0 0 1 14.546 8 6.553 6.553 0 0 1 8 14.546z"
+                        <RNSVGCircle
+                          cx="7"
+                          cy="7"
                           fill={
                             Array [
                               0,
-                              4287664035,
+                              4278496255,
                             ]
                           }
                           fillOpacity={1}
@@ -685,6 +787,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                               "fill",
                             ]
                           }
+                          r="7"
                           rotation={0}
                           scaleX={1}
                           scaleY={1}
@@ -703,11 +806,11 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           y={0}
                         />
                         <RNSVGPath
-                          d="M8 3.394a.97.97 0 0 0 0 1.94.97.97 0 0 0 0-1.94zM8 6.788a.727.727 0 0 0-.727.727v4.364a.727.727 0 0 0 1.454 0V7.515A.727.727 0 0 0 8 6.788z"
+                          d="M6.94 4.316C7.372 4.316 7.72 3.968 7.72 3.536C7.72 3.104 7.372 2.756 6.94 2.756C6.52 2.756 6.16 3.104 6.16 3.536C6.16 3.968 6.52 4.316 6.94 4.316ZM6.316 11H7.576V5.204H6.316V11Z"
                           fill={
                             Array [
                               0,
-                              4287664035,
+                              4294967295,
                             ]
                           }
                           fillOpacity={1}
@@ -748,8 +851,8 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           y={0}
                         />
                       </RNSVGGroup>
-                    </RNSVGSvgView>
-                  </View>
+                    </RNSVGGroup>
+                  </RNSVGSvgView>
                 </View>
               </TouchableOpacity>
               <View
@@ -769,7 +872,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#04ABFF",
                           "fontFamily": "Rubik-Medium",
                           "fontSize": 14,
                           "marginBottom": 6,
@@ -790,7 +893,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -806,7 +909,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#04ABFF",
                           "fontFamily": "Rubik-Medium",
                           "fontSize": 14,
                           "marginBottom": 6,
@@ -827,7 +930,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       Array [
                         Object {
                           "alignSelf": "stretch",
-                          "color": "#241C7D",
+                          "color": "#454F54",
                           "fontFamily": "Karla-Regular",
                           "fontSize": 14,
                           "lineHeight": 22,
@@ -1000,7 +1103,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#241C7D",
+                        "color": "#04ABFF",
                         "fontFamily": "Karla-Bold",
                         "fontSize": 18,
                         "paddingBottom": 28,
@@ -1125,7 +1228,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                       fill={
                         Array [
                           0,
-                          4294053133,
+                          4294923124,
                         ]
                       }
                       fillOpacity={1}
@@ -1172,7 +1275,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   style={
                     Array [
                       Object {
-                        "color": "#241C7D",
+                        "color": "#04ABFF",
                         "fontFamily": "Karla-Bold",
                         "fontSize": 18,
                         "paddingBottom": 28,
@@ -1194,4 +1297,4 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
     </Modal>
   </View>
 </View>
-`
+`;
