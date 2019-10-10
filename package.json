@@ -29,7 +29,7 @@
     "@egendata/messaging": "0.4.2",
     "@egendata/react-native-simple-crypto": "1.0.1",
     "@react-native-community/async-storage": "1.6.1",
-    "react-native-jose": "file:../react-native-jose/react-native-jose-v1.0.0.tgz",
+    "react-native-jose": "file:../react-native-jose/react-native-jose-0.1.2.tgz",
     "@types/js-base64": "2.3.1",
     "axios": "0.19.0",
     "buffer": "5.4.2",

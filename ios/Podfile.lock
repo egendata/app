@@ -66,7 +66,7 @@ PODS:
     - React
   - react-native-config (0.11.7):
     - React
-  - react-native-jose (1.0.0):
+  - react-native-jose (0.1.2):
     - React
   - react-native-simple-crypto (1.0.1):
     - React
@@ -217,7 +217,7 @@ SPEC CHECKSUMS:
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-camera: 9bf6e0cdce0d7dc059d9836eb381d96f58f83d83
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
-  react-native-jose: 34f846768334c475d3e3b7b74b7093f7ae43718f
+  react-native-jose: 92332bb289b305474a0ca9d5d41c617403b3a051
   react-native-simple-crypto: 6b26e68962fe23c49eee2cfa266fc5efa435cb7f
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
@@ -236,6 +236,6 @@ SPEC CHECKSUMS:
   RNSVG: ff9b094e39dd4a437ebe17d1c7ceed286e75f426
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: 2483cda86d4116a074fa1411656d12e0c99afeba
+PODFILE CHECKSUM: 576358aebf45fba25ff256c8d32fd9899bdac6de
 
 COCOAPODS: 1.7.5

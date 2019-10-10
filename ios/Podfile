@@ -2,6 +2,8 @@
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'Egendata' do
+  use_frameworks!
+  
   # Pods for Egendata
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
@@ -28,6 +30,7 @@ target 'Egendata' do
   pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   pod 'react-native-config', :path => '../node_modules/react-native-config'
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+  pod 'react-native-jose', :path => '../node_modules/react-native-jose'
 
   target 'EgendataTests' do
     inherit! :search_paths
