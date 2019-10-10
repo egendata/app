@@ -4,7 +4,7 @@ module.exports = {
   rootDir: './',
   setupFiles: ['<rootDir>/jest.setup.js'],
   clearMocks: true,
-  preset: 'react-native',
+  preset: '@testing-library/react-native',
   moduleFileExtensions: ['js'],
   testMatch: [
     '**/__tests__/**/*.test.[jt]s?(x)',
