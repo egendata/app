@@ -2,7 +2,7 @@ platform :ios, '10.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'Egendata' do
-  # use_frameworks!
+#   use_frameworks!
 
   # Pods for Egendata
   pod 'React', :path => '../node_modules/react-native/'
