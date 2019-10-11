@@ -1,9 +1,9 @@
-# platform :ios, '10.0'
+platform :ios, '10.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'Egendata' do
-  use_frameworks!
-  
+  # use_frameworks!
+
   # Pods for Egendata
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
@@ -48,7 +48,10 @@ end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-
+      
+      target.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
+      end
       # The following is needed to ensure the "archive" step works in XCode.
       # It removes React & Yoga from the Pods project, as it is already included in the main project.
       # Without this, you'd see errors when you archive like:
@@ -68,7 +71,7 @@ post_install do |installer|
                              " && export SYMROOT=$RNC_ROOT/ios/ReactNativeConfig"\
                              " && export BUILD_DIR=$RNC_ROOT/ios/ReactNativeConfig"\
                              " && ruby $RNC_ROOT/ios/ReactNativeConfig/BuildDotenvConfig.ruby"
-  
+
         target.build_phases << phase
         target.build_phases.move(phase,0)
       end
