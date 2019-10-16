@@ -46,6 +46,8 @@ jobs:
       osx_image: xcode10
       before_install:
         - cd ios
+        - bundle update --bundler
+        - gem update --system
       install:
         - bundle install
       script:
