@@ -46,8 +46,10 @@ jobs:
       osx_image: xcode10.3
       before_install:
         - cd ios
-        - gem install bundler -v 2.0.1
+        - gem install bundler
         - gem update --system
+        - sudo xcode-select -s /Applications/Xcode.app
+        - ls -lah /Applications
       install:
         - bundle install
       script:

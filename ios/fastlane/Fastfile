@@ -14,7 +14,7 @@
 # update_fastlane
 
 default_platform(:ios)
-xcversion(version: "9.4.1")
+xcversion(version: "10.3")
 
 platform :ios do
   desc "Push a new beta build to TestFlight"
