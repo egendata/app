@@ -42,8 +42,9 @@ jobs:
           cd android && fastlane android_alpha
 
     - stage: fastlane_ios
+      os: osx
       language: objective-c
-      osx_image: xcode11.2	
+      osx_image: xcode10.3	
       before_install:
         - cd ios
         - gem install bundler
