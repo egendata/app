@@ -17,12 +17,9 @@ default_platform(:android)
 
   platform :android do
     desc "Runs all the tests"
-    lane :alpha do
+    lane :build do
       gradle(
         task: "clean bundleRelease"
-      )
-      upload_to_play_store(
-        track: 'internal'
       )
     end
 
