@@ -43,7 +43,7 @@ jobs:
 
     - stage: fastlane_ios
       language: objective-c
-      osx_image: xcode10.3
+      osx_image: xcode11.2	
       before_install:
         - cd ios
         - gem install bundler
