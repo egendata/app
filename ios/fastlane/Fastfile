@@ -22,9 +22,17 @@ platform :ios do
     build_app(scheme: "Egendata")
   end
 
+  lane :certificates do
+    match
+  end
+
   lane :beta do
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
     build_app(scheme: "Egendata")
+
+
+    #match(git_basic_authorization: ENV['GITHUB_CERT_TOKEN'])
+    
     upload_to_testflight
   end
 end
