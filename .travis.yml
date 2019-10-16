@@ -44,10 +44,12 @@ jobs:
     - stage: fastlane_ios
       language: objective-c
       osx_image: xcode8.3
+      before_install:
+        - cd ios
       install:
         - bundle install
       script:
-        - cd ios && fastlane beta
+        - fastlane beta
 
 stages:
   - name: fastlane_ios
