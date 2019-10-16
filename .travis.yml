@@ -41,6 +41,14 @@ jobs:
 
           cd android && fastlane android_alpha
 
+    - stage: fastlane_ios
+      language: objective-c
+      osx_image: xcode8.3
+      install:
+        - bundle install
+      script:
+        - cd ios && fastlane beta
+
 stages:
   - name: fastlane_android
     if: branch = master AND type != pull_request
