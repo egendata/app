@@ -25,8 +25,8 @@ platform :ios do
   lane :ios_testflight do
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
 
-    # Install the required certificates and profiles
-    ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = ENV['GITHUB_CERT_TOKEN']
+    # # Install the required certificates and profiles
+    # ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = ENV['GITHUB_CERT_TOKEN']
 
     setup_travis
     match(
