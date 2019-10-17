@@ -27,7 +27,11 @@ platform :ios do
 
     # Install the required certificates and profiles
     setup_travis
-    match(type: "appstore", readonly: true)
+    match(
+      type: "appstore", 
+      readonly: true, 
+      git_basic_authorization: ENV['GITHUB_CERT_TOKEN']
+    )
 
     # Build and deploy to TestFlight
     build_app(export_method: "app-store")
