@@ -49,7 +49,6 @@ jobs:
         - cd ios
         - gem install bundler
         - gem update --system
-        - echo -e "machine github.com\n  login $GITHUB_CERT_TOKEN" >> ~/.netrc
       install:
         - bundle install
       script:
@@ -57,6 +56,7 @@ jobs:
 
 stages:
   - name: fastlane_ios
+    # TODO(@all): remove before merge, should be != pull_request
     if: branch = master AND type = pull_request
   - name: fastlane_android
     if: branch = master AND type != pull_request
