@@ -53,7 +53,7 @@ platform :ios do
     )
 
     # Build and deploy to TestFlight
-    build_app(scheme: "Egendata", export_method: "app-store")
+    build_app(scheme: "Egendata", export_method: "development")
     upload_to_testflight
   end
 
