@@ -29,7 +29,7 @@ platform :ios do
 
     setup_travis
     match(
-      type: "appstore", 
+      type: "development", 
       readonly: false, 
     )
 
