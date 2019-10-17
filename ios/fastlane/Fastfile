@@ -30,8 +30,8 @@ platform :ios do
     match(
       type: "appstore", 
       readonly: true, 
-      git_user_email: 'momentiris@gmail.com',
-      git_basic_authorization: ENV['GITHUB_C_TOKEN']
+      username: 'momentiris@gmail.com',
+      git_basic_authorization: ENV['GITHUB_CERT_TOKEN']
     )
 
     # Build and deploy to TestFlight
