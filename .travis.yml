@@ -49,12 +49,10 @@ jobs:
         - cd ios
         - gem install bundler
         - gem update --system
-        - sudo xcode-select -s /Applications/Xcode.app
-        - ls -lah /Applications
       install:
         - bundle install
       script:
-        - fastlane beta
+        - fastlane ios_testflight 
 
 stages:
   - name: fastlane_ios
