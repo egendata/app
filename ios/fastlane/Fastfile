@@ -30,6 +30,7 @@ platform :ios do
     setup_travis
     match(
       type: "appstore", 
+      readonly: false, 
     )
 
     # Build and deploy to TestFlight
