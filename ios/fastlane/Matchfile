@@ -1,4 +1,4 @@
-git_url("git@github.com:Iteam1337/egendata-ios-certificates.git")
+git_url("https://github.com/Iteam1337/egendata-ios-certificates.git")
 
 storage_mode("git")
 
