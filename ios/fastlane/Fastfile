@@ -26,12 +26,12 @@ platform :ios do
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
 
     # Install the required certificates and profiles
+    ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = 'GITHUB_CERT_TOKEN'
+
     setup_travis
     match(
       type: "appstore", 
       readonly: true, 
-      username: 'momentiris@gmail.com',
-      git_basic_authorization: ENV['GITHUB_CERT_TOKEN']
     )
 
     # Build and deploy to TestFlight
