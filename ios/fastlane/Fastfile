@@ -34,9 +34,9 @@ platform :ios do
     )
 
     disable_automatic_code_signing(path: xcode_project_path)
-
+    xcode_project_path = '../Egendata/Egendata.xcodeproj'
     update_project_team(
-      path: '../Egendata/Egendata.xcodeproj',
+      path: xcode_project_path,
       teamid: "BSE2J6442R" # Use your developer team ID
     )
 
