@@ -33,7 +33,7 @@ platform :ios do
       readonly: true, 
     )
 
-    xcode_project_path = '../Egendata/Egendata.xcodeproj'
+    xcode_project_path = 'Egendata.xcodeproj'
     disable_automatic_code_signing(path: xcode_project_path)
     update_project_team(
       path: xcode_project_path,
