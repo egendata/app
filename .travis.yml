@@ -54,6 +54,7 @@ jobs:
         - gem update --system
       install:
         - bundle install
+        - pod install
       script:
         - fastlane ios_testflight
 
