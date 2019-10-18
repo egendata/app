@@ -49,7 +49,7 @@ platform :ios do
       xcodeproj: xcode_project_path,
       profile: provisioning_profile_path,
       build_configuration: "Release",
-      code_signing_identity: 'iPhone Development'
+      code_signing_identity: 'iOS Distribution'
     )
 
     # Build and deploy to TestFlight
