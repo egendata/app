@@ -49,10 +49,10 @@ jobs:
         - cd ios
         - gem install bundler
         - gem install cocoapods
-        - pod install
         - gem update --system
       install:
         - bundle install
+        - pod install
       script:
         - fastlane ios_testflight
 
