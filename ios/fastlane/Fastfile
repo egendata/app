@@ -29,7 +29,7 @@ platform :ios do
 
     setup_travis
     match(
-      type: "development", 
+      type: "appstore", 
       readonly: true, 
     )
 
@@ -53,7 +53,7 @@ platform :ios do
     )
 
     # Build and deploy to TestFlight
-    build_app(scheme: "Egendata", export_method: "development")
+    build_app(scheme: "Egendata", export_method: "appstore")
     upload_to_testflight
   end
 
