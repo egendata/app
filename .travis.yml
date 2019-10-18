@@ -44,15 +44,17 @@ jobs:
     - stage: fastlane_ios
       os: osx
       language: objective-c
-      osx_image: xcode10.3	
+      osx_image: xcode10.3
       before_install:
         - cd ios
         - gem install bundler
+        - gem install cocoapods
+        - pod install
         - gem update --system
       install:
         - bundle install
       script:
-        - fastlane ios_testflight 
+        - fastlane ios_testflight
 
 stages:
   - name: fastlane_ios
