@@ -35,6 +35,8 @@ platform :ios do
       increment_build_number(xcodeproj: "Egendata.xcodeproj")
       increment_version_number(version_number: next_version)
 
+      build_number = get_build_number(xcodeproj: "Project.xcodeproj")
+
       setup_travis
       # Install the required certificates and profile
       match(
@@ -78,7 +80,7 @@ platform :ios do
 
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
     build_app(scheme: "Egendata", export_method: "app-store")
-    pilot(skip_waiting_for_build_processing: true)
+    # pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :beta do
