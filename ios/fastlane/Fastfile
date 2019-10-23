@@ -20,6 +20,9 @@ platform :ios do
   lane :build do
     build_app(scheme: "Egendata")
   end
+  lane :increment do
+    increment_build_number(xcodeproj: "Egendata.xcodeproj")
+  end
 
   lane :ios_testflight do
 
@@ -35,7 +38,7 @@ platform :ios do
       increment_build_number(xcodeproj: "Egendata.xcodeproj")
       increment_version_number(version_number: next_version)
 
-      build_number = get_build_number(xcodeproj: "Project.xcodeproj")
+      build_number = get_build_number(xcodeproj: "Egendata.xcodeproj")
 
       setup_travis
       # Install the required certificates and profile
