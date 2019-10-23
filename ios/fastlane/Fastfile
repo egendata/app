@@ -24,18 +24,16 @@ platform :ios do
   lane :ios_testflight do
 
     # Install the required certificates and profile
-
     setup_travis
     match(
       type: "appstore", 
       readonly: true, 
     )
     
-
     # Build and deploy to TestFlight
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
     build_app(scheme: "Egendata", export_method: "app-store")
-    upload_to_testflight
+    pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :beta do
