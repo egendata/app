@@ -23,17 +23,51 @@ platform :ios do
 
   lane :ios_testflight do
 
-    # Install the required certificates and profile
-    setup_travis
-    match(
-      type: "appstore", 
-      readonly: true, 
-    )
-    
-    # Build and deploy to TestFlight
-    increment_build_number(xcodeproj: "Egendata.xcodeproj")
-    build_app(scheme: "Egendata", export_method: "app-store")
-    pilot(skip_waiting_for_build_processing: true)
+    tag_prefix = 'ios/alpha*'
+    title = iOS Alpha'
+    groups = 'Alpha Team'
+    flavor = 'alpha'
+
+    is_releasable = analyze_commits(match: tag_prefix)
+
+    if is_releasable then
+      next_version = lane_context[SharedValues::RELEASE_NEXT_VERISON]
+      increment_build_number(xcodeproj: "Egendata.xcodeproj")
+      increment_version_number(version_number: next_version)
+
+      setup_travis
+      # Install the required certificates and profile
+      match(
+        type: "appstore", 
+        readonly: true, 
+      )
+      
+      # Build and deploy to TestFlight
+      build_app(scheme: "Egendata", export_method: "app-store")
+      pilot(skip_waiting_for_build_processing: true)
+
+      tag_name = "ios/#{flavor}/#{next_version}/#{build_number}"
+      notes = conventional_changelog(title: title, format: 'markdown')
+
+      sh("git", "remote", "set-url", "origin", "https://" + ENV["GITHUB_USER"] + ":" + ENV["GITHUB_TOKEN"] + "@github.com/" + ENV["TRAVIS_REPO_SLUG"] + ".git")
+      sh("git", "checkout", "chore/testflight-ci")
+      sh("git", "config", "user.name", ENV["GITHUB_USER"])
+      sh("git", "config", "user.email", ENV["GITHUB_EMAIL"])
+      git_add(path: 'Egendata-tvOS/Info.plist')
+      git_add(path: 'Egendata-tvOSTests/Info.plist')
+      git_add(path: 'Egendata.xcodeproj/project.pbxproj')
+      git_add(path: 'Egendata/Info.plist')
+      git_add(path: 'EgendataTests/Info.plist')
+
+      git_commit(path: '.', message: 'chore: version bump ios', skip_git_hooks: true)
+      push_to_git_remote(
+        local_branch: "chore/testflight-ci",  # optional, aliased by "branch", default is set to current branch
+        remote_branch: "chore/testflight-ci" # optional, default is set to local_branch
+      )
+
+    else
+      echo(message: "Skip deploying #{title}. No changes since last one!")
+    end
   end
 
   lane :beta do
