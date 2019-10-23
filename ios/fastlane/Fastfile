@@ -23,7 +23,7 @@ platform :ios do
 
   lane :ios_testflight do
 
-    tag_prefix = 'ios/alpha*'
+    tag_prefix = 'ios/alpha/1.0.0/47'
     title = 'iOS Alpha'
     groups = 'Alpha Team'
     flavor = 'alpha'
@@ -68,6 +68,17 @@ platform :ios do
     else
       echo(message: "Skip deploying #{title}. No changes since last one!")
     end
+  end
+
+  lane :manual_alpha_release do
+    match(
+        type: "appstore", 
+        readonly: true, 
+      )
+
+    increment_build_number(xcodeproj: "Egendata.xcodeproj")
+    build_app(scheme: "Egendata", export_method: "app-store")
+    pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :beta do
