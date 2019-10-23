@@ -31,7 +31,7 @@ platform :ios do
     is_releasable = analyze_commits(match: tag_prefix)
 
     if is_releasable then
-      next_version = lane_context[SharedValues::RELEASE_NEXT_VERISON]
+      next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
       increment_build_number(xcodeproj: "Egendata.xcodeproj")
       increment_version_number(version_number: next_version)
 
