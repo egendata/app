@@ -56,8 +56,7 @@ jobs:
 
 stages:
   - name: fastlane_ios
-    # TODO(@all): remove before merge, should be != pull_request
-    if: branch = master AND type = pull_request
+    if: branch = master AND type != pull_request
   - name: fastlane_android
     if: branch = master AND type != pull_request
   - name: test_and_lint
