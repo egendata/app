@@ -24,7 +24,7 @@ platform :ios do
   lane :ios_testflight do
 
     tag_prefix = 'ios/alpha*'
-    title = iOS Alpha'
+    title = 'iOS Alpha'
     groups = 'Alpha Team'
     flavor = 'alpha'
 
