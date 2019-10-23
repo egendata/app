@@ -34,11 +34,7 @@ jobs:
         - bundle install && cd ..
       script:
         - |
-          echo "
-          OPERATOR_URL=${OPERATOR_URL}
-          DROPBOX_KEY=${PDS_KEY}
-          " > .env
-
+          echo "OPERATOR_URL=${OPERATOR_URL} DROPBOX_KEY=${PDS_KEY}" > .env
           cd android && fastlane android_alpha
 
     - stage: fastlane_ios

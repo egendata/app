@@ -40,7 +40,9 @@ platform :ios do
 
       build_number = get_build_number(xcodeproj: "Egendata.xcodeproj")
 
+      # Configure fastlane for travis
       setup_travis
+
       # Install the required certificates and profile
       match(
         type: "appstore", 
@@ -51,11 +53,15 @@ platform :ios do
       build_app(scheme: "Egendata", export_method: "app-store")
       pilot(skip_waiting_for_build_processing: true)
 
+      # Create github tag
       tag_name = "ios/#{flavor}/#{next_version}/#{build_number}"
+
+      # Generate changelog from semantic release
       notes = conventional_changelog(title: title, format: 'markdown')
 
+      # Push the bumped build version number back to remote to keep in sync with next build
       sh("git", "remote", "set-url", "origin", "https://" + ENV["GITHUB_USER"] + ":" + ENV["GITHUB_TOKEN"] + "@github.com/" + ENV["TRAVIS_REPO_SLUG"] + ".git")
-      sh("git", "checkout", "chore/testflight-ci")
+      sh("git", "checkout", "master")
       sh("git", "config", "user.name", ENV["GITHUB_USER"])
       sh("git", "config", "user.email", ENV["GITHUB_EMAIL"])
       git_add(path: 'Egendata-tvOS/Info.plist')
@@ -64,10 +70,10 @@ platform :ios do
       git_add(path: 'Egendata/Info.plist')
       git_add(path: 'EgendataTests/Info.plist')
 
-      git_commit(path: '.', message: 'chore: version bump ios', skip_git_hooks: true)
+      git_commit(path: '.', message: 'chore(ios): bump build number', skip_git_hooks: true)
       push_to_git_remote(
-        local_branch: "chore/testflight-ci",  # optional, aliased by "branch", default is set to current branch
-        remote_branch: "chore/testflight-ci" # optional, default is set to local_branch
+        local_branch: "master",  # optional, aliased by "branch", default is set to current branch
+        remote_branch: "master" # optional, default is set to local_branch
       )
 
     else
@@ -83,7 +89,7 @@ platform :ios do
 
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
     build_app(scheme: "Egendata", export_method: "app-store")
-    # pilot(skip_waiting_for_build_processing: true)
+    pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :beta do
