@@ -20,10 +20,82 @@ platform :ios do
   lane :build do
     build_app(scheme: "Egendata")
   end
+  lane :increment do
+    increment_build_number(xcodeproj: "Egendata.xcodeproj")
+  end
+
+  lane :ios_testflight do
+
+    tag_prefix = 'ios/alpha/1.0.0/47'
+    title = 'iOS Alpha'
+    groups = 'Alpha Team'
+    flavor = 'alpha'
+
+    is_releasable = analyze_commits(match: tag_prefix)
+
+    if is_releasable then
+      next_version = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+      increment_build_number(xcodeproj: "Egendata.xcodeproj")
+      increment_version_number(version_number: next_version)
+
+      build_number = get_build_number(xcodeproj: "Egendata.xcodeproj")
+
+      # Configure fastlane for travis
+      setup_travis
+
+      # Install the required certificates and profile
+      match(
+        type: "appstore", 
+        readonly: true, 
+      )
+      
+      # Build and deploy to TestFlight
+      build_app(scheme: "Egendata", export_method: "app-store")
+      pilot(skip_waiting_for_build_processing: true)
+
+      # Create github tag
+      tag_name = "ios/#{flavor}/#{next_version}/#{build_number}"
+
+      # Generate changelog from semantic release
+      notes = conventional_changelog(title: title, format: 'markdown')
+
+      # Push the bumped build version number back to remote to keep in sync with next build
+      sh("git", "remote", "set-url", "origin", "https://" + ENV["GITHUB_USER"] + ":" + ENV["GITHUB_TOKEN"] + "@github.com/" + ENV["TRAVIS_REPO_SLUG"] + ".git")
+      sh("git", "checkout", "master")
+      sh("git", "config", "user.name", ENV["GITHUB_USER"])
+      sh("git", "config", "user.email", ENV["GITHUB_EMAIL"])
+      git_add(path: 'Egendata-tvOS/Info.plist')
+      git_add(path: 'Egendata-tvOSTests/Info.plist')
+      git_add(path: 'Egendata.xcodeproj/project.pbxproj')
+      git_add(path: 'Egendata/Info.plist')
+      git_add(path: 'EgendataTests/Info.plist')
+
+      git_commit(path: '.', message: 'chore(ios): bump build number', skip_git_hooks: true)
+      push_to_git_remote(
+        local_branch: "master",  # optional, aliased by "branch", default is set to current branch
+        remote_branch: "master" # optional, default is set to local_branch
+      )
+
+    else
+      echo(message: "Skip deploying #{title}. No changes since last one!")
+    end
+  end
+
+  lane :manual_alpha_release do
+    match(
+        type: "appstore", 
+        readonly: true, 
+      )
+
+    increment_build_number(xcodeproj: "Egendata.xcodeproj")
+    build_app(scheme: "Egendata", export_method: "app-store")
+    pilot(skip_waiting_for_build_processing: true)
+  end
 
   lane :beta do
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
     build_app(scheme: "Egendata")
+
     upload_to_testflight
   end
 end

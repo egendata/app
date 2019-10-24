@@ -93,6 +93,8 @@ React debug menu available on ios with ⌘d and on android with ⌘m / ctrl+m
 
 ## Releasing Betas
 
+**At the time of writing, both iOS and Android builds are integrated in the continuous deployment pipeline. Paired with a semantic release plugin, [Fastlane](https://github.com/fastlane/fastlane) builds and deploys both Android and iOS (not differentiated atm) from changes to the master branch that are relevant to the [semantic release commit message format](https://github.com/semantic-release/semantic-release#commit-message-format).**
+
 ### Manual releases
 
 *Install fastlane*
@@ -110,35 +112,33 @@ brew cask install fastlane
 
 ### iOS (Testflight)
 
+We use [Fastlane match](https://docs.fastlane.tools/actions/match/) for building and deploying this app.
+
+Fastlane match uses a private Github repository (encrypted) to store iOS signing certificates and the provisioning profile needed to build and ship the application. When you run a [lane](https://docs.fastlane.tools/advanced/lanes/) with the match command in it, fastlane pulls the said files from this repository and uses them for signing in the xcode build process.
+
+All the relevant files for how this is currently set up can be found in `ios/fastlane`.
+
 *Prerequisites:*
 
 1. Install the latest Xcode command line tools:
 
 `xcode-select --install`
 
-2. Download and open the provisioning-profile from the [Apple Developer Potal](developer.apple.com). For `Signing (Debug)` use "Egendata iOS", for  `Signing (Release)` use "Egendata iOS Distribution Profile".
+2. Access to the private repository holding the certificates and the provisioning profile.
 
-3. Certificates and signing
-- Add a app signing certificate associated with your companys provisioning profile. It's located in lastpass `IteamIOSDistributionCertificate.p12`
+3. Edit the `git_url(...)` in `ios/fastlane/Matchfile` to the ssh version of the git url.
 
-   - Double click and enter password (found in lastpass `Egendata iOS Certificate Password`)
-
-   - Open the project in Xcode, find the "Egendata" iOS target and its general settings. In the `signing` section, check the `Automatically manage signing` box.
-
-   - Open Xcode accounts preferences (Xcode -> preferences -> accounts). *If you don't see your apple id here, sign in from the + sign in the bottom left corner with the apple id associated with your team on apples dev console.*
-
-   - Target your apple id, select your team and then -> `manage certificates`. If you have installed the cert correctly from the above steps, you should see `iOS Distribution` under the `iOS Distribution Certificates` section without any complaints of keys missing. If so, you're good.
+4. Username and password for the apple user who is performing this operation. This user needs to be a part of the appstore connect team.
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
-
 ```
 cd ios
-fastlane beta
+fastlane manual_alpha_release
 ```
+
 *NOTE: Fastlane command might error with `error: Multiple commands produce ...`, if so, run again.*
 *NOTE: Fastlane command might error with ` error: The sandbox is not in sync with the Podfile.lock`, if so, see the `If build fails` section .*
-
 
 ### Android (Google Play)
 

@@ -2,8 +2,6 @@ jobs:
   include:
     - stage: test_and_lint
       language: node_js
-      node_js:
-        - "10"
       cache:
         directories:
           - "$HOME/.npm"
@@ -27,21 +25,34 @@ jobs:
         - tar xvf ./android/secrets.tar -C ./android
         - mv ./android/release.keystore ./android/app
         - yes | sdkmanager "platforms;android-28"
-        - nvm install 10.16.3
         - npm ci
         - npm run preandroid
         - cd android && gem install bundler
         - bundle install && cd ..
       script:
         - |
-          echo "
-          OPERATOR_URL=${OPERATOR_URL}
-          DROPBOX_KEY=${PDS_KEY}
-          " > .env
-
+          echo "OPERATOR_URL=${OPERATOR_URL} DROPBOX_KEY=${PDS_KEY}" > .env
           cd android && fastlane android_alpha
 
+    - stage: fastlane_ios
+      os: osx
+      language: objective-c
+      osx_image: xcode10.3
+      before_install:
+        - npm ci
+        - cd ios
+        - gem install bundler
+        - gem install cocoapods
+        - gem update --system
+      install:
+        - bundle install
+        - pod install
+      script:
+        - fastlane ios_testflight
+
 stages:
+  - name: fastlane_ios
+    if: branch = master AND type != pull_request
   - name: fastlane_android
     if: branch = master AND type != pull_request
   - name: test_and_lint
