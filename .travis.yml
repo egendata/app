@@ -20,6 +20,7 @@ jobs:
           - platform-tools
           - android-28.0.3
       before_install:
+        - nvm install
         - openssl aes-256-cbc -K $encrypted_f54afed1def3_key -iv $encrypted_f54afed1def3_iv -in ./android/google_play_store.json.enc -out ./android/google_play_store.json -d
         - openssl aes-256-cbc -K $encrypted_2dc3e24d74d0_key -iv $encrypted_2dc3e24d74d0_iv -in ./android/secrets.tar.enc -out ./android/secrets.tar -d
         - tar xvf ./android/secrets.tar -C ./android
@@ -39,6 +40,7 @@ jobs:
       language: objective-c
       osx_image: xcode10.3
       before_install:
+        - nvm install
         - npm ci
         - cd ios
         - gem install bundler
