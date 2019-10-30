@@ -26,7 +26,7 @@ platform :ios do
 
   lane :ios_testflight do
 
-    tag_prefix = 'ios/alpha/1.0.0/47'
+    tag_prefix = 'ios/alpha*'
     title = 'iOS Alpha'
     groups = 'Alpha Team'
     flavor = 'alpha'
@@ -45,10 +45,10 @@ platform :ios do
 
       # Install the required certificates and profile
       match(
-        type: "appstore", 
-        readonly: true, 
+        type: "appstore",
+        readonly: true,
       )
-      
+
       # Build and deploy to TestFlight
       build_app(scheme: "Egendata", export_method: "app-store")
       pilot(skip_waiting_for_build_processing: true)
@@ -75,7 +75,7 @@ platform :ios do
         local_branch: "master",  # optional, aliased by "branch", default is set to current branch
         remote_branch: "master" # optional, default is set to local_branch
       )
-      
+
       # Create tag to recognize future "last version" (the current version)
       set_github_release(
         repository_name: "egendata/app",
@@ -92,8 +92,8 @@ platform :ios do
 
   lane :manual_alpha_release do
     match(
-        type: "appstore", 
-        readonly: true, 
+        type: "appstore",
+        readonly: true,
       )
 
     increment_build_number(xcodeproj: "Egendata.xcodeproj")
