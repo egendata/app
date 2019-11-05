@@ -11,7 +11,6 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - JOSESwift (1.8.0)
   - React (0.60.5):
     - React-Core (= 0.60.5)
     - React-DevSupport (= 0.60.5)
@@ -68,7 +67,6 @@ PODS:
   - react-native-config (0.11.7):
     - React
   - react-native-jose (0.1.2):
-    - JOSESwift
     - React
   - react-native-simple-crypto (1.0.1):
     - React
@@ -142,7 +140,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
-    - JOSESwift
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -211,7 +208,6 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  JOSESwift: 39419bb87494bd58d4f14e1a3e3d6615945c80dd
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -221,7 +217,7 @@ SPEC CHECKSUMS:
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-camera: 9bf6e0cdce0d7dc059d9836eb381d96f58f83d83
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
-  react-native-jose: c563fce5c580b30db50de17782ba417ccba2774e
+  react-native-jose: 302c4445fd11a13c746392ee897a47d780d74cf5
   react-native-simple-crypto: 6b26e68962fe23c49eee2cfa266fc5efa435cb7f
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
