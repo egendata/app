@@ -66,6 +66,8 @@ PODS:
     - React
   - react-native-config (0.11.7):
     - React
+  - react-native-jose (0.1.2):
+    - React
   - react-native-simple-crypto (1.0.1):
     - React
   - React-RCTActionSheet (0.60.5):
@@ -116,6 +118,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-config (from `../node_modules/react-native-config`)
+  - react-native-jose (from `../node_modules/react-native-jose`)
   - "react-native-simple-crypto (from `../node_modules/@egendata/react-native-simple-crypto`)"
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -163,6 +166,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-camera"
   react-native-config:
     :path: "../node_modules/react-native-config"
+  react-native-jose:
+    :path: "../node_modules/react-native-jose"
   react-native-simple-crypto:
     :path: "../node_modules/@egendata/react-native-simple-crypto"
   React-RCTActionSheet:
@@ -212,6 +217,7 @@ SPEC CHECKSUMS:
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-camera: 9bf6e0cdce0d7dc059d9836eb381d96f58f83d83
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
+  react-native-jose: 302c4445fd11a13c746392ee897a47d780d74cf5
   react-native-simple-crypto: 6b26e68962fe23c49eee2cfa266fc5efa435cb7f
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
@@ -230,6 +236,6 @@ SPEC CHECKSUMS:
   RNSVG: ff9b094e39dd4a437ebe17d1c7ceed286e75f426
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: 3216973cbf6efe0f47cbd091529936c9352a095b
+PODFILE CHECKSUM: 60397ea0854142e8429b2144bcba41b25925dbbc
 
 COCOAPODS: 1.7.5
