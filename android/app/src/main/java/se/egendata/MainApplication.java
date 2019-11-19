@@ -35,8 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
         new SvgPackage(),
         new RNGestureHandlerPackage(),
         new RNCameraPackage(),
-        new ReactNativeConfigPackage()
-              ,new JosePackage()
+        new ReactNativeConfigPackage(),
+        new JosePackage()
       );
     }
 
