@@ -60,7 +60,6 @@
     "@babel/runtime": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@peculiar/webcrypto": "^1.0.12",
     "@react-native-community/eslint-config": "^0.0.5",
     "@testing-library/react-native": "^4.0.12",
     "@types/express": "^4.17.0",
