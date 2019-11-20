@@ -49,6 +49,7 @@ jobs:
       install:
         - bundle install
         - pod install
+        - bundle update fastlane
       script:
         - fastlane ios_testflight
 
