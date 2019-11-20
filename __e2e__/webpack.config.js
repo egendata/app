@@ -9,15 +9,19 @@ module.exports = {
       'react-native': resolve(__dirname, 'src/native/react-native'),
       'react-native-config': resolve(
         __dirname,
-        'src/native/react-native-config'
+        'src/native/react-native-config',
       ),
       '@egendata/react-native-simple-crypto': resolve(
         __dirname,
-        'src/native/react-native-simple-crypto'
+        'src/native/react-native-simple-crypto',
+      ),
+      '@egendata/react-native-jose': resolve(
+        __dirname,
+        'src/native/react-native-jose',
       ),
       '@react-native-community/async-storage': resolve(
         __dirname,
-        'src/native/async-storage'
+        'src/native/async-storage',
       ),
       'isomorphic-webcrypto': resolve(__dirname, 'src/native/webcrypto.js'),
     },
