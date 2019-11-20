@@ -1,7 +1,7 @@
 import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import { Crypto } from '@peculiar/webcrypto'
 const jestPreset = require('@testing-library/react-native/jest-preset')
+global.fetch = require('jest-fetch-mock')
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -18,12 +18,9 @@ jest.mock('@react-native-community/async-storage', () => {
   }
 })
 
-jest.mock('axios')
 jest.mock('react-native-config', () => ({
   Config: {},
 }))
-
-jest.doMock('isomorphic-webcrypto', () => new Crypto())
 
 console.error = jest.fn()
 

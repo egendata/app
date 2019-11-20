@@ -8,7 +8,7 @@ function filterAvailableDevices(devices) {
       return matching.concat(
         list
           .filter(d => !d.availabilityError && /iPhone/.test(d.name))
-          .map(d => d.name)
+          .map(d => d.name),
       )
     }, [])
 }
@@ -38,7 +38,7 @@ async function run() {
     ['run-ios', `--simulator=${device}`],
     {
       stdio: 'pipe',
-    }
+    },
   )
   ls.stdout.on('data', data => process.stdout.write(data))
   ls.stderr.on('data', data => process.stderr.write(data))

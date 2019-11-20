@@ -48,6 +48,10 @@ or whatever is the adress of the operator you want to use. Note that *OPERATOR_U
   npm run android
   ```
 
+  - `npm run android` is only needed the first time or when adding dependencies (it runs Jetifier to migrate libraries to AndroidX; after that you can run it from Android Studio if you prefer)
+
+  - if you want to run it on an actual device you need to run adb reverse tcp:8081 tcp:8081 so that the phone can reach the Metro bundler
+
 ### __iOS__
 
 - Update Cocoapods if version < 1.7.5 (check with `pod --version`)

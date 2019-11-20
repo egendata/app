@@ -13,6 +13,7 @@ import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.pedrouid.crypto.RCTCryptoPackage;
 import org.reactnative.camera.RNCameraPackage;
+import com.reactlibrary.JosePackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
         new SvgPackage(),
         new RNGestureHandlerPackage(),
         new RNCameraPackage(),
-        new ReactNativeConfigPackage()
+        new ReactNativeConfigPackage(),
+        new JosePackage()
       );
     }
 

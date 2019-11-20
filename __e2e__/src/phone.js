@@ -45,7 +45,7 @@ export const approveLogin = auth.approveLogin
 
 export async function setConfig(config) {
   Object.entries(config).forEach(([key, val]) =>
-    Object.assign(Config, { [key]: val })
+    Object.assign(Config, { [key]: val }),
   )
   return Config
 }

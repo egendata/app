@@ -4,7 +4,7 @@ import { inspect } from 'util'
 
 if (!process.env.OPERATOR_URL) {
   console.warn(
-    'OPERATOR_URL not set for app-server. SetConfig has to be used before app-server will be able to reach Operator'
+    'OPERATOR_URL not set for app-server. SetConfig has to be used before app-server will be able to reach Operator',
   )
 } else {
   phone.setConfig({ OPERATOR_URL: process.env.OPERATOR_URL }).then(() => {
