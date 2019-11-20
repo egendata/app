@@ -66,7 +66,7 @@ PODS:
     - React
   - react-native-config (0.11.7):
     - React
-  - react-native-jose (0.3.0):
+  - react-native-jose (0.4.0):
     - React
   - react-native-simple-crypto (1.0.1):
     - React
@@ -217,7 +217,7 @@ SPEC CHECKSUMS:
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-camera: 9bf6e0cdce0d7dc059d9836eb381d96f58f83d83
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
-  react-native-jose: ded34fc680057d00f302814c726624f5b9c2fd63
+  react-native-jose: e04b4058066176ec72af338ddfb9a0758973d868
   react-native-simple-crypto: 6b26e68962fe23c49eee2cfa266fc5efa435cb7f
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
