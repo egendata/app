@@ -66,7 +66,7 @@ jobs:
 
 stages:
   - name: deliver
-    if: branch = feat/e2e
+    if: branch = master AND type = pull_request
   - name: fastlane_ios
     if: branch = master AND type != pull_request
   - name: fastlane_android
