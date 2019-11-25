@@ -1,15 +1,27 @@
 jobs:
   include:
     - stage: test_and_lint
+      services:
+        - docker
       language: node_js
       cache:
         directories:
           - "$HOME/.npm"
+      before_install:
+        # Install a newer version of docker-compose than the one provided by Travis
+        - sudo rm /usr/local/bin/docker-compose
+        - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+        - chmod +x docker-compose
+        - sudo mv docker-compose /usr/local/bin
+        - sudo apt-get install libgconf-2-4 # cypress needs this
+        - git clone https://github.com/egendata/e2e.git ../e2e
       install:
         - npm ci
+        - cd ../e2e && npm ci
       script:
         - npm run lint
         - npm run test
+        - cd ../e2e && HOST_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+') npm run test:local:app
 
     - stage: fastlane_android
       language: android
