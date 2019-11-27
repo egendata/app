@@ -21,7 +21,7 @@ jobs:
       script:
         - npm run lint
         - npm run test
-        - cd ../e2e && HOST_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+') npm run test:local:app
+        - cd ../e2e && npm run test:local:app
 
     - stage: fastlane_android
       language: android
