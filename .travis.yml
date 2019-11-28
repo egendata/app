@@ -17,11 +17,11 @@ jobs:
         - git clone https://github.com/egendata/e2e.git ../e2e
       install:
         - npm ci
-        - cd ../e2e && npm ci
+        - npm ci --prefix ../e2e
       script:
         - npm run lint
         - npm run test
-        - cd ../e2e && npm run test:local:app
+        - npm run test:local:app --prefix ../e2e
 
     - stage: fastlane_android
       language: android
