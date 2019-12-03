@@ -1,15 +1,27 @@
 jobs:
   include:
     - stage: test_and_lint
+      services:
+        - docker
       language: node_js
       cache:
         directories:
           - "$HOME/.npm"
+      before_install:
+        # Install a newer version of docker-compose than the one provided by Travis
+        - sudo rm /usr/local/bin/docker-compose
+        - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+        - chmod +x docker-compose
+        - sudo mv docker-compose /usr/local/bin
+        - sudo apt-get install libgconf-2-4 # cypress needs this
+        - git clone https://github.com/egendata/e2e.git ../e2e
       install:
         - npm ci
+        - npm ci --prefix ../e2e
       script:
         - npm run lint
         - npm run test
+        - npm run test:local:app --prefix ../e2e
 
     - stage: fastlane_android
       language: android
@@ -52,7 +64,21 @@ jobs:
       script:
         - fastlane ios_testflight
 
+    - stage: deliver
+      name: "Build Docker image"
+      services:
+        - docker
+      script:
+        # Authenticate towards Docker Hub
+        - docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+        - docker build -t jobtechswe/mydata-app .
+        - docker push jobtechswe/mydata-app
+      after_script:
+        - docker logout
+
 stages:
+  - name: deliver
+    if: branch = master AND type = pull_request
   - name: fastlane_ios
     if: branch = master AND type != pull_request
   - name: fastlane_android
