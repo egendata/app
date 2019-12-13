@@ -95,6 +95,15 @@ If the app doesn't open automatically go into apps and find Egendata
 
 React debug menu available on ios with ⌘d and on android with ⌘m / ctrl+m
 
+### Debugging
+  If the app complains about not getting the right methods exported from `react-native-jose`, try clearing all your react-native cache:
+
+  ```bash
+  watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache
+
+  watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && npm cache clean --force && npm install && npm start -- --reset-cache
+  ```
+
 ## Releasing Betas
 
 **At the time of writing, both iOS and Android builds are integrated in the continuous deployment pipeline. Paired with a semantic release plugin, [Fastlane](https://github.com/fastlane/fastlane) builds and deploys both Android and iOS (not differentiated atm) from changes to the master branch that are relevant to the [semantic release commit message format](https://github.com/semantic-release/semantic-release#commit-message-format).**
