@@ -11,7 +11,7 @@ exports[`elements/Icons/QRIcon should render 1`] = `
         "inactive": "#E0E7EB",
         "lightGrey": "#EAEAF1",
         "loading": "#81A1B1",
-        "primary": "#04ABFF",
+        "primary": "#0099E5",
         "quiet": "#FAFAFA",
         "shadow": "grey",
         "text": Object {
