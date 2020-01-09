@@ -157,7 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  fastlane (= 2.136.0)
+  fastlane
   fastlane-plugin-semantic_release
   xcode-install
 
