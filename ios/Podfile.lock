@@ -68,7 +68,7 @@ PODS:
     - React
   - react-native-jose (0.4.0):
     - React
-  - react-native-simple-crypto (1.0.1):
+  - react-native-simple-crypto (1.0.2):
     - React
   - React-RCTActionSheet (0.60.5):
     - React-Core (= 0.60.5)
@@ -138,7 +138,7 @@ DEPENDENCIES:
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - boost-for-react-native
 
 EXTERNAL SOURCES:
@@ -218,7 +218,7 @@ SPEC CHECKSUMS:
   react-native-camera: 88f19d7240667a8dae9d76414986c2893d712744
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-jose: e04b4058066176ec72af338ddfb9a0758973d868
-  react-native-simple-crypto: b1b94601f75f525e806e8f7fdc6853009855d30f
+  react-native-simple-crypto: e8aa2319a18926523ba389a654a78dcdf9aa6547
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24
