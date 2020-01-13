@@ -62,7 +62,9 @@ jobs:
         - bundle install
         - pod install
       script:
-        - fastlane ios_testflight
+        - |
+          echo "OPERATOR_URL=${OPERATOR_URL} DROPBOX_KEY=${PDS_KEY}" > .env
+          fastlane ios_testflight
 
     - stage: deliver
       name: "Build Docker image"
