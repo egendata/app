@@ -15,11 +15,11 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
       Array [
         Object {
           "alignItems": "center",
-          "backgroundColor": "#FAFAFA",
+          "backgroundColor": "#F7F8F8",
           "height": "100%",
           "justifyContent": "center",
-          "paddingLeft": 24,
-          "paddingRight": 24,
+          "paddingLeft": 12,
+          "paddingRight": 12,
         },
       ]
     }
@@ -231,7 +231,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
             }
             style={
               Object {
-                "backgroundColor": "#FAFAFA",
+                "backgroundColor": "#F7F8F8",
                 "paddingTop": 24,
               }
             }
