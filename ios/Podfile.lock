@@ -372,10 +372,10 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-camera: 9bf6e0cdce0d7dc059d9836eb381d96f58f83d83
+  react-native-camera: 88f19d7240667a8dae9d76414986c2893d712744
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-jose: e85455676e6190291bdb61f6814c6036ba13fb3d
-  react-native-simple-crypto: e1e958139bae411c5d76a2438b004f601639ac6e
+  react-native-simple-crypto: e8aa2319a18926523ba389a654a78dcdf9aa6547
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -386,8 +386,8 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  ReactNativePermissions: f0aec11433d43d45953c678b6982921d83ad94c8
-  RNCAsyncStorage: 621bad7a889b5bf1583a52547f2dcd3a4d1ff15e
+  ReactNativePermissions: f3beb8871251594a8ea2c6b19a3f8252d5c7379d
+  RNCAsyncStorage: 2e2e3feb9bdadc752a026703d8c4065ca912e75a
   RNEmulatorCheck: 00924e42c62a5a3a8751aaaa167fab0c5b12fbb9
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
