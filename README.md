@@ -106,7 +106,7 @@ React debug menu available on ios with ⌘d and on android with ⌘m / ctrl+m
 
 ## Releasing Betas
 
-**At the time of writing, both iOS and Android builds are integrated in the continuous deployment pipeline. Paired with a semantic release plugin, [Fastlane](https://github.com/fastlane/fastlane) builds and deploys both Android and iOS (not differentiated atm) from changes to the master branch that are relevant to the [semantic release commit message format](https://github.com/semantic-release/semantic-release#commit-message-format).**
+**At the time of writing, both iOS and Android builds are integrated in the continuous delivery pipeline. Paired with a semantic release plugin, [Fastlane](https://github.com/fastlane/fastlane) builds and deploys both Android and iOS (not differentiated atm) from changes to the master branch that are relevant to the [semantic release commit message format](https://github.com/semantic-release/semantic-release#commit-message-format).**
 
 ### Manual releases
 

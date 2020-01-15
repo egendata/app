@@ -8,11 +8,14 @@ exports[`elements/Icons/QRIcon should render 1`] = `
         "accept": "#0AC238",
         "border": "#EBEAFA",
         "deny": "#FF5374",
+        "icon": Object {
+          "arrowRight": "#81A1B1",
+        },
         "inactive": "#E0E7EB",
         "lightGrey": "#EAEAF1",
         "loading": "#81A1B1",
-        "primary": "#04ABFF",
-        "quiet": "#FAFAFA",
+        "primary": "#0099E5",
+        "quiet": "#F7F8F8",
         "shadow": "grey",
         "text": Object {
           "pre": "#81A1B1",
@@ -28,6 +31,9 @@ exports[`elements/Icons/QRIcon should render 1`] = `
         "small": "14px",
       },
       "sizes": Object {
+        "borderRadius": Object {
+          "small": 5,
+        },
         "elevation": 6,
       },
       "spacing": Object {
