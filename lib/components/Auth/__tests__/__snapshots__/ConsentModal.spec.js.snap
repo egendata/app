@@ -284,6 +284,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                     align="xMidYMid"
                     bbHeight="14"
                     bbWidth="14"
+                    focusable={false}
                     height="14"
                     meetOrSlice={0}
                     minX={0}
@@ -295,7 +296,9 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           "borderWidth": 0,
                         },
                         undefined,
-                        null,
+                        Object {
+                          "opacity": 1,
+                        },
                         Object {
                           "flex": 0,
                           "height": 14,
@@ -648,6 +651,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                     align="xMidYMid"
                     bbHeight="14"
                     bbWidth="14"
+                    focusable={false}
                     height="14"
                     meetOrSlice={0}
                     minX={0}
@@ -659,7 +663,9 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                           "borderWidth": 0,
                         },
                         undefined,
-                        null,
+                        Object {
+                          "opacity": 1,
+                        },
                         Object {
                           "flex": 0,
                           "height": 14,
@@ -987,6 +993,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   align="xMidYMid"
                   bbHeight="44"
                   bbWidth="24"
+                  focusable={false}
                   height="44"
                   meetOrSlice={0}
                   minX={0}
@@ -998,7 +1005,9 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         "borderWidth": 0,
                       },
                       undefined,
-                      null,
+                      Object {
+                        "opacity": 1,
+                      },
                       Object {
                         "flex": 0,
                         "height": 44,
@@ -1159,6 +1168,7 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                   align="xMidYMid"
                   bbHeight="44"
                   bbWidth="24"
+                  focusable={false}
                   height="44"
                   meetOrSlice={0}
                   minX={0}
@@ -1170,7 +1180,9 @@ exports[`components/Consent/ConsentModal should render without errors 1`] = `
                         "borderWidth": 0,
                       },
                       undefined,
-                      null,
+                      Object {
+                        "opacity": 1,
+                      },
                       Object {
                         "flex": 0,
                         "height": 44,

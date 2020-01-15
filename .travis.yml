@@ -80,7 +80,7 @@ jobs:
 
 stages:
   - name: deliver
-    if: branch = master AND type = pull_request
+    if: branch = master AND type != pull_request
   - name: fastlane_ios
     if: branch = master AND type != pull_request
   - name: fastlane_android
