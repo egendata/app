@@ -125,8 +125,8 @@ android {
         applicationId "com.egendata"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 79
-        versionName "2.2.3"
+        versionCode 80
+        versionName "2.2.4"
         ndk {
             abiFilters "armeabi-v7a", "x86", "x86_64", "arm64-v8a"
         }
