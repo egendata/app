@@ -28,7 +28,7 @@
   "dependencies": {
     "@egendata/messaging": "0.6.0",
     "@egendata/react-native-jose": "0.5.0",
-    "@egendata/react-native-simple-crypto": "1.0.1",
+    "@egendata/react-native-simple-crypto": "1.0.2",
     "@react-native-community/async-storage": "1.6.1",
     "@types/js-base64": "2.3.1",
     "buffer": "5.4.2",

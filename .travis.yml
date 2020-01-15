@@ -44,7 +44,7 @@ jobs:
         - bundle install && cd ..
       script:
         - |
-          echo "OPERATOR_URL=${OPERATOR_URL} DROPBOX_KEY=${PDS_KEY}" > .env
+          echo "OPERATOR_URL=${OPERATOR_URL}" >> .env && echo "DROPBOX_KEY=${PDS_KEY}" >> .env
           cd android && fastlane android_alpha
 
     - stage: fastlane_ios
@@ -60,9 +60,11 @@ jobs:
         - gem update --system
       install:
         - bundle install
-        - pod install
+        - pod install && cd ..
       script:
-        - fastlane ios_testflight
+        - |
+          echo "OPERATOR_URL=${OPERATOR_URL}" >> .env && echo "DROPBOX_KEY=${PDS_KEY}" >> .env
+          cd ios && fastlane ios_testflight
 
     - stage: deliver
       name: "Build Docker image"
