@@ -64,7 +64,7 @@ jobs:
       script:
         - |
           echo "OPERATOR_URL=${OPERATOR_URL} DROPBOX_KEY=${PDS_KEY}" > .env
-          cd ios && cat ../.env && fastlane ios_testflight
+          cd ios && cat ../.env && fastlane manual_alpha_release
 
     - stage: deliver
       name: "Build Docker image"

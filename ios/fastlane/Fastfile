@@ -91,14 +91,15 @@ platform :ios do
   end
 
   lane :manual_alpha_release do
-    match(
-        type: "appstore",
-        readonly: true,
-      )
+    sh("cat", "../../.env")
+    # match(
+    #     type: "appstore",
+    #     readonly: true,
+    #   )
 
-    increment_build_number(xcodeproj: "Egendata.xcodeproj")
-    build_app(scheme: "Egendata", export_method: "app-store")
-    pilot(skip_waiting_for_build_processing: true)
+    # increment_build_number(xcodeproj: "Egendata.xcodeproj")
+    # build_app(scheme: "Egendata", export_method: "app-store")
+    # pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :beta do
