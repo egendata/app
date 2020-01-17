@@ -71,6 +71,7 @@
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "detox": "^15.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.3.0",
@@ -101,5 +102,26 @@
     "react-test-renderer": "^16.9.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
+  },
+  "detox": {
+    "configurations": {
+      "ios": {
+        "binaryPath": "ios/build/Egendata/Build/Products/Debug-iphonesimulator/Egendata.app",
+        "build": "xcodebuild -workspace ios/Egendata.xcworkspace -scheme Egendata -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build/Egendata",
+        "type": "ios.simulator",
+        "device": {
+          "type": "iPhone 11 Pro"
+        }
+      },
+      "android": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "npx jetifier && cd ./android && ./gradlew app:assembleDebug app:assembleAndroidTest -DtestBuildType=debug  && cd ..",
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Detox_Tests"
+        }
+      }
+    },
+    "test-runner": "jest"
   }
 }
