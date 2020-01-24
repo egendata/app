@@ -15,7 +15,7 @@ jasmine.getEnv().addReporter(adapter)
 jasmine.getEnv().addReporter(specReporter)
 
 beforeAll(async () => {
-  await detox.init(config)
+  await detox.init(config, { initGlobals: false })
 }, 300000)
 
 beforeEach(async () => {

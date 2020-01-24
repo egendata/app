@@ -48,6 +48,7 @@
     "react-native-svg-icon": "0.8.1",
     "react-native-svg-uri": "1.2.3",
     "react-navigation": "3.11.1",
+    "selenium-webdriver": "^4.0.0-alpha.5",
     "simple-pem2jwk": "0.2.4",
     "styled-components": "4.3.2",
     "uuid": "3.3.3"
@@ -71,6 +72,7 @@
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "chromedriver": "^79.0.0",
     "detox": "^15.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
