@@ -16,10 +16,4 @@ module.exports = {
     '<rootDir>/__e2e__/',
   ],
   cacheDirectory: '.jest/cache',
-  transformIgnorePatterns: [
-    'node_modules/(?!(react-native|@egendata/react-native-jose|react-native-collapsible|react-native-modal|react-native-animatable)/)',
-  ],
-  unmockedModulePathPatterns: ['react-native-jose'],
-  autoMock: false,
-  verbose: true,
 }
