@@ -1,2 +1,7 @@
-json_key_file("/home/travis/build/egendata/app/android/google_play_store.json")
+if ENV['CI']
+    json_key_file("/home/travis/build/egendata/app/android/google_play_store.json")
+else 
+    json_key_file("../google_play_store.json")
+end
+
 package_name("com.egendata")
