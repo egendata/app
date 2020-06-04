@@ -17,7 +17,7 @@ An example app for managing consents and viewing data
 ### Linux and Android
 
 * Install Android Studio https://developer.android.com/studio/install
-  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/Sdk`
+  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/sdk` on linux and, `sdk.dir = /Users/mgg/Library/Android/sdk` on mac, replacing username with your user's name
   * Approve the licenses of the SDK packages by running ` /home/USERNAME/Android/Sdk/tools/bin/sdkmanager --licenses`
   * If you get `Could not find tools.jar` then you need to point gradle to the JDK installation.
     * You can find it with `2>/dev/null find / -name tools.jar -path "*jdk*"`
@@ -51,7 +51,11 @@ or whatever is the adress of the operator you want to use. Note that *OPERATOR_U
   - `npm run android` is only needed the first time or when adding dependencies (it runs Jetifier to migrate libraries to AndroidX; after that you can run it from Android Studio if you prefer)
 
   - if you want to run it on an actual device you need to run adb reverse tcp:8081 tcp:8081 so that the phone can reach the Metro bundler
-
+- Add a gradle.properties file as /android/gradle.properties with the following contents
+  ```
+  android.useAndroidX=true
+  android.enableJetifier=true
+  ```
 ### __iOS__
 
 - Update Cocoapods if version < 1.7.5 (check with `pod --version`)
@@ -137,11 +141,11 @@ All the relevant files for how this is currently set up can be found in `ios/fas
 
 `xcode-select --install`
 
-2. Access to the private repository holding the certificates and the provisioning profile.
+2. Access to the private repository (Iteam1337/egendata-ios-certificates) holding the certificates and the provisioning profile. Your personal account should be invited as fastlane will use the 
 
-3. Edit the `git_url(...)` in `ios/fastlane/Matchfile` to the ssh version of the git url.
+3. The certf-repo-passphrase. Currently stored in lastpass under `Egendata iOS Certificate Password`. You will be asked for this password when running the fastlane command.
 
-4. Username and password for the apple user who is performing this operation. This user needs to be a part of the appstore connect team.
+4. Username and password for the apple user who is performing this operation. This user needs to be a part of the appstore connect team. Currently stored in lastpass under `Egendata iOS Certificate Password`. You will be asked for these credentials when running the fastlane command.
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
@@ -152,6 +156,8 @@ fastlane manual_alpha_release
 
 *NOTE: Fastlane command might error with `error: Multiple commands produce ...`, if so, run again.*
 *NOTE: Fastlane command might error with ` error: The sandbox is not in sync with the Podfile.lock`, if so, see the `If build fails` section .*
+
+The app should now have been released in testflight. To access it and invite other people. Make sure you get invited to the team at https://appstoreconnect.apple.com.
 
 ### Android (Google Play)
 
