@@ -17,7 +17,7 @@ An example app for managing consents and viewing data
 ### Linux and Android
 
 * Install Android Studio https://developer.android.com/studio/install
-  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/sdk` on linux and, `sdk.dir = /Users/mgg/Library/Android/sdk` on mac, replacing username with your user's name
+  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/sdk` on linux and, `sdk.dir = /Users/USERNAME/Library/Android/sdk` on mac, replacing USERNAME with your user's name
   * Approve the licenses of the SDK packages by running ` /home/USERNAME/Android/Sdk/tools/bin/sdkmanager --licenses`
   * If you get `Could not find tools.jar` then you need to point gradle to the JDK installation.
     * You can find it with `2>/dev/null find / -name tools.jar -path "*jdk*"`
