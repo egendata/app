@@ -165,7 +165,7 @@ The app should now have been released in testflight. To access it and invite oth
 
 1. Download the Google Play, the release.keystore and the gradle.properties (it's in LastPass)
   - Place the `.json`-file somewhere, you'll need to point to it from `android/fastlane/Appfile`
-    `json_key_file("/path/to/egendata_google_play.json")`
+    `json_key_file("/path/to/google_play_store.json")`
   - Place the `release.keystore` in `android/app`
   - Create `gradle.properties` in `android` and paste from lastpass.
 
