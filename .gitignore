@@ -83,3 +83,4 @@ __e2e__/dist
 # Other
 google_play_store.json
 egendata_google_play.json
+*.hprof
