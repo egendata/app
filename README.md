@@ -15,7 +15,9 @@ An example app for managing consents and viewing data
 - Install Watchman `brew install watchman`
 
 ### Linux and Android
-
+* Make sure you have java 8 installed, the project is only compatible with this version. Later versions breaks the build. 
+  - With brew you can install java8 with `brew cask install adoptopenjdk8` 
+  - Then remember to se your JAVA_HOME env to this version (and/or add it to your .bashrc): `export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home`
 * Install Android Studio https://developer.android.com/studio/install
   * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/sdk` on linux and, `sdk.dir = /Users/mgg/Library/Android/sdk` on mac, replacing username with your user's name
   * Approve the licenses of the SDK packages by running ` /home/USERNAME/Android/Sdk/tools/bin/sdkmanager --licenses`
@@ -23,7 +25,7 @@ An example app for managing consents and viewing data
     * You can find it with `2>/dev/null find / -name tools.jar -path "*jdk*"`
     * If you don't have JDK installed then install it
     * Create the file `~/.gradle/gradle.properties` with the line `org.gradle.java.home = /PATH/TO/JDK`
-  * Set up the device which will run the app (API Level 26, Android 8.0) https://facebook.github.io/react-native/docs/getting-started.html#preparing-the-android-device
+  * Install and open Android studio. Open the android folder inside Android Studio. Set up the device which will run the app (API Level 26, Android 8.0) by opening AVD manager. The AVD manager can be opened from the dropdown menu next to the play button.
 * (Optionally, if you want it to automatically reload on code change) Install Watchman https://facebook.github.io/watchman/docs/install.html#installing-from-source
 
 ## Config
@@ -171,7 +173,11 @@ The app should now have been released in testflight. To access it and invite oth
 
 2.
 ```
-cd android
-fastlane alpha
+* cd android
+* fastlane android_alpha
+* After fastlane has ran, this could take several minutes. You should see the message: "Successfully finished the upload to Google Play"
+* Make sure you are invited to the google play account hosting the app. Then, to access the console (currently Iteam's account): https://play.google.com/apps/publish/?account=7914539322420463189#ManageReleaseTrackPlace:p=com.egendata&appid=4972061446016688220&releaseTrackId=4700968953354340768
+* Or enter the account, press Egendata app -> Appversioner -> Intern testkanal.
+
 ```
 
