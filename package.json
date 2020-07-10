@@ -88,6 +88,7 @@
     "jest": "24.8.0",
     "jest-fetch-mock": "^2.1.2",
     "jetifier": "^1.6.4",
+    "jwk-to-pem": "^2.0.4",
     "jwt-lite": "^2.1.0",
     "lint-staged": "^9.2.1",
     "lolex": "^4.2.0",
