@@ -13,8 +13,8 @@
     "lint": "eslint '**/*.js'",
     "prettier": "eslint '**/*.js' --fix",
     "e2e:build": "cd __e2e__/ && webpack",
-    "e2e:start": "node __e2e__/dist/index.js",
-    "e2e:watch": "npm run e2e:build && nodemon __e2e__/dist/ --watch __e2e__/dist/"
+    "e2e:start": "OPERATOR_URL=http://localhost:3000 node __e2e__/dist/index.js",
+    "e2e:watch": "nodemon --ignore __e2e__/dist/ --exec 'npm run e2e:build && npm run e2e:start'"
   },
   "contributors": [
     "Adam Näslund <adam.naslund@iteam.se>",
@@ -26,7 +26,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@egendata/messaging": "0.6.0",
+    "@egendata/messaging": "^0.8.0",
     "@egendata/react-native-jose": "0.5.0",
     "@egendata/react-native-simple-crypto": "1.0.2",
     "@react-native-community/async-storage": "1.6.1",
@@ -88,6 +88,7 @@
     "jest": "24.8.0",
     "jest-fetch-mock": "^2.1.2",
     "jetifier": "^1.6.4",
+    "jwk-to-pem": "^2.0.4",
     "jwt-lite": "^2.1.0",
     "lint-staged": "^9.2.1",
     "lolex": "^4.2.0",

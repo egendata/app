@@ -15,15 +15,17 @@ An example app for managing consents and viewing data
 - Install Watchman `brew install watchman`
 
 ### Linux and Android
-
+* Make sure you have java 8 installed, the project is only compatible with this version. Later versions breaks the build. 
+  - With brew you can install java8 with `brew cask install adoptopenjdk8` 
+  - Then remember to se your JAVA_HOME env to this version (and/or add it to your .bashrc): `export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home`
 * Install Android Studio https://developer.android.com/studio/install
-  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/Sdk`
+  * In the project directory create the file `android/local.properties` with the content `sdk.dir = /home/USERNAME/Android/sdk` on linux and, `sdk.dir = /Users/mgg/Library/Android/sdk` on mac, replacing username with your user's name
   * Approve the licenses of the SDK packages by running ` /home/USERNAME/Android/Sdk/tools/bin/sdkmanager --licenses`
   * If you get `Could not find tools.jar` then you need to point gradle to the JDK installation.
     * You can find it with `2>/dev/null find / -name tools.jar -path "*jdk*"`
     * If you don't have JDK installed then install it
     * Create the file `~/.gradle/gradle.properties` with the line `org.gradle.java.home = /PATH/TO/JDK`
-  * Set up the device which will run the app (API Level 26, Android 8.0) https://facebook.github.io/react-native/docs/getting-started.html#preparing-the-android-device
+  * Install and open Android studio. Open the android folder inside Android Studio. Set up the device which will run the app (API Level 26, Android 8.0) by opening AVD manager. The AVD manager can be opened from the dropdown menu next to the play button.
 * (Optionally, if you want it to automatically reload on code change) Install Watchman https://facebook.github.io/watchman/docs/install.html#installing-from-source
 
 ## Config
@@ -51,7 +53,11 @@ or whatever is the adress of the operator you want to use. Note that *OPERATOR_U
   - `npm run android` is only needed the first time or when adding dependencies (it runs Jetifier to migrate libraries to AndroidX; after that you can run it from Android Studio if you prefer)
 
   - if you want to run it on an actual device you need to run adb reverse tcp:8081 tcp:8081 so that the phone can reach the Metro bundler
-
+- Add a gradle.properties file as /android/gradle.properties with the following contents
+  ```
+  android.useAndroidX=true
+  android.enableJetifier=true
+  ```
 ### __iOS__
 
 - Update Cocoapods if version < 1.7.5 (check with `pod --version`)
@@ -137,11 +143,11 @@ All the relevant files for how this is currently set up can be found in `ios/fas
 
 `xcode-select --install`
 
-2. Access to the private repository holding the certificates and the provisioning profile.
+2. Access to the private repository (Iteam1337/egendata-ios-certificates) holding the certificates and the provisioning profile. Your personal account should be invited as fastlane will use the 
 
-3. Edit the `git_url(...)` in `ios/fastlane/Matchfile` to the ssh version of the git url.
+3. The certf-repo-passphrase. Currently stored in lastpass under `Egendata iOS Certificate Password`. You will be asked for this password when running the fastlane command.
 
-4. Username and password for the apple user who is performing this operation. This user needs to be a part of the appstore connect team.
+4. Username and password for the apple user who is performing this operation. This user needs to be a part of the appstore connect team. Currently stored in lastpass under `Egendata iOS Certificate Password`. You will be asked for these credentials when running the fastlane command.
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
@@ -153,19 +159,25 @@ fastlane manual_alpha_release
 *NOTE: Fastlane command might error with `error: Multiple commands produce ...`, if so, run again.*
 *NOTE: Fastlane command might error with ` error: The sandbox is not in sync with the Podfile.lock`, if so, see the `If build fails` section .*
 
+The app should now have been released in testflight. To access it and invite other people. Make sure you get invited to the team at https://appstoreconnect.apple.com.
+
 ### Android (Google Play)
 
 *NOTE: Remember to change `.env`-file (correct OPERATOR_URL etc.) before doing the steps below*
 
 1. Download the Google Play, the release.keystore and the gradle.properties (it's in LastPass)
   - Place the `.json`-file somewhere, you'll need to point to it from `android/fastlane/Appfile`
-    `json_key_file("/path/to/egendata_google_play.json")`
+    `json_key_file("/path/to/google_play_store.json")`
   - Place the `release.keystore` in `android/app`
   - Create `gradle.properties` in `android` and paste from lastpass.
 
 2.
 ```
-cd android
-fastlane alpha
+* cd android
+* fastlane android_alpha
+* After fastlane has ran, this could take several minutes. You should see the message: "Successfully finished the upload to Google Play"
+* Make sure you are invited to the google play account hosting the app. Then, to access the console (currently Iteam's account): https://play.google.com/apps/publish/?account=7914539322420463189#ManageReleaseTrackPlace:p=com.egendata&appid=4972061446016688220&releaseTrackId=4700968953354340768
+* Or enter the account, press Egendata app -> Appversioner -> Intern testkanal.
+
 ```
 
