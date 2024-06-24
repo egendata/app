@@ -1,5 +1,8 @@
-git_url("https://#{ENV['GITHUB_CERT_TOKEN']}@github.com/Iteam1337/egendata-ios-certificates.git")
-
+if ENV['CI']
+    git_url("https://#{ENV['GITHUB_CERT_TOKEN']}@github.com/Iteam1337/egendata-ios-certificates.git")
+else
+    git_url("git@github.com:Iteam1337/egendata-ios-certificates.git")
+end
 storage_mode("git")
 
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development

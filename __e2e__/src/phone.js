@@ -7,7 +7,10 @@ import Config from 'react-native-config'
 import AsyncStorage from '@react-native-community/async-storage'
 
 export async function createAccount() {
-  const pds = { provider: 'memory', access_token: 'nope' }
+  const pds = {
+    provider: 'memory',
+    access_token: 'not needed for provider: memory',
+  }
   const acc = {
     pds,
   }
